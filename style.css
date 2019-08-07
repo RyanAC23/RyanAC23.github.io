@@ -1,4 +1,7 @@
-html {
-   max-width: 500px;
-   margin: auto;
+body.main {
+   max-width: 800px;
+}
+
+body.sidebar {
+   max-width: 150px;
 }
