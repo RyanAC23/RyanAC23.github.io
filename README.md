@@ -1,3 +1,4 @@
 # RyanAC23.github.io
 
-Todo: Draft site, fork for a portable modern version & a Geocities pure version.
+Archival site rescued from geocities. Definitely not something made in the late
+2010s, no sir.
