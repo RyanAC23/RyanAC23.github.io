@@ -1,0 +1,29 @@
+table table table table td, b, span, .btext, .orangetext15, .whitetext12, .text {
+	color: #FFFFFF !important;
+}
+
+table.contactTable td.tdborder table td, table.contactTable td.tdborder {
+	background-color: #E0E1E2 !important;
+}
+
+table, span, .btext, .orangetext15 {
+	background-color: transparent !important;
+}
+
+.lightbluetext8 {
+	color: #B2DFEE !important;
+}
+
+.interestsAndDetails, .extendedNetwork, .friendsComments  {
+	padding: 5px !important;
+}
+
+div table tr td {background-color: #FF0000 !important;}
+div table tr td a:link,div table tr td a:visited {color: #7FFF00 !important;}
+table table table td, .clearfix, .interestsAndDetails, .contactTable, .extendedNetwork , .blurbs, .friendSpace, .friendsComments, div object, .whitetext12, div#mini, ul li div span div, div.vplayer  {background-color: #2A2A2A !important;}
+.profileInfo, .interestsAndDetails, .contactTable, .extendedNetwork , .blurbs, .friendSpace,.friendsComments, div#mini, ul li div span div, div.vplayer {border: #FF0000 2px solid !important;}
+a {color: #7FFF00 !important;}
+.whitetext12 {padding-top: 5px !important;padding-bottom: 5px !important;}
+.blacktext12{padding: 0px 5px !important;}
+
+#topnav #leftNav li :hover{background-color:#1548AE;}

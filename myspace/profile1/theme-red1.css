@@ -1,0 +1,7 @@
+div table tr td {background-color: #BD9D00 !important;}
+div table tr td a:link,div table tr td a:visited {color: #DDCCEE !important;}
+table table table td, .clearfix, .interestsAndDetails, .contactTable, .extendedNetwork , .blurbs, .friendSpace, .friendsComments, div object, .whitetext12, div#mini, ul li div span div, div.vplayer  {background-color: #A50000 !important;}
+.profileInfo, .interestsAndDetails, .contactTable, .extendedNetwork , .blurbs, .friendSpace,.friendsComments, div#mini, ul li div span div, div.vplayer {border: #BD9D00 2px solid !important;}
+a {font-weight: normal !important;color: #FF9BD4 !important;}
+.whitetext12 {padding-top: 5px !important;padding-bottom: 5px !important;}
+.blacktext12{padding: 0px 5px !important;}
