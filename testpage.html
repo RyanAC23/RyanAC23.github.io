@@ -66,7 +66,7 @@
   <p>I'm guessing the former replaced the latter at some point [in the future]</p>
   <br>
   <p>There is also a blockquote tag:</p>
-  <blockquote>
+  <blockquote><p>
     I was the shadow of the waxwing slain <br>
     by the false azure in the windowpane; <br>
     I was the smudge of ashen fluff-and I <br>
@@ -111,8 +111,26 @@
     </TEXTAREA>
     <p><INPUT TYPE="submit" VALUE="This doesn't work"> <INPUT TYPE="reset"> (this reset button does, though)
     </FORM>
-  <br><br><br><br>
+    <br>
+  <hr>
+    <H2>A Little More Detail (?)</H2>
+    <p>Special characters with &# 
+    <p>For example, a name with &#233 would use special character 233, preceded by &#
+    <p>Left and right angle brackets with lt and gt: &lt &gt (no # for these)
+    <p>This also works for <CODE>&amp;amp</CODE> and <CODE>&amp;quot</CODE></p>
+    <p><b>JARGON:</b>
+    <UL>
+      <LI>tag: commands within &lt; &gt; brackets</LI>
+      <LI>element: Everything in between the brackets, <CODE>&lt;LI&gt;like this list element.&lt;/LI&gt;</CODE></LI>
+      <LI>empty element: Any element that doesn't affect a block of text, and thus doesn't require closing (<CODE>p, img</CODE>)</LI>
+      <LI>container: A name occasionally used for elements marking blocks of text.</LI>
+      <LI>attributes: Modifiers to elements, such as <CODE>width=""</CODE>, which are often optional.</LI>
 
+    </UL>
+    </p>
+    <hr>
+    <br>
+    <address>Hello, hello, hello, hello....</address>
   </body>
 
 </html>
