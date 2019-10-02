@@ -60,6 +60,8 @@
   <br>
   TT: <TT>as in, Typewriter.</TT> I don't think this one is supported in the real world.
   <br>
+  PRE: <PRE>This one sounds similar to &lt;TT&gt;, but it appears to start on a new line.</PRE> Text after PRE appears below it.
+  <br>
   What's the <B>difference</B> between <B>BOLD</B> and <STRONG>STRONG</STRONG>?
   <br>
   How about <I>ITALICS</I> and <EM>EMPHASIS</EM>?
@@ -115,9 +117,10 @@
   <hr>
     <H2>A Little More Detail (?)</H2>
     <p>Special characters with &# 
-    <p>For example, a name with &#233 would use special character 233, preceded by &#
+    <p>For example, a name with &#233 would use special character 233, preceded by &#.
     <p>Left and right angle brackets with lt and gt: &lt &gt (no # for these)
     <p>This also works for <CODE>&amp;amp</CODE> and <CODE>&amp;quot</CODE></p>
+    <p>Also try <sub>sub</sub> and <sup>sup</sup>!</p>
     <p><b>JARGON:</b>
     <UL>
       <LI>tag: commands within &lt; &gt; brackets</LI>
@@ -125,12 +128,17 @@
       <LI>empty element: Any element that doesn't affect a block of text, and thus doesn't require closing (<CODE>p, img</CODE>)</LI>
       <LI>container: A name occasionally used for elements marking blocks of text.</LI>
       <LI>attributes: Modifiers to elements, such as <CODE>width=""</CODE>, which are often optional.</LI>
-
     </UL>
-    </p>
+    <hr>
+    <a href="home.html" target="main" TITLE="This will take you back to the home screen.">Hover over this!</a><br>
+    <p>Mouseover text uses the historical TITLE attribute because it was originally intended to give you the title in the HEAD element of a new
+      page, without loading it.
+    
+    <p>URLs only contain the bottom half of the ISO Latin-1 characters, encoded in hex as %xx. (this is because many electronic mail programs mishandle
+       special ASCII characters.) </p>
     <hr>
     <br>
-    <address>Hello, hello, hello, hello....</address>
+    <address>Hello, hello, hello, how low....</address>
   </body>
 
 </html>
