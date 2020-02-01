@@ -1,0 +1,99 @@
+##############################################################################
+# New Ubuntu Mate Setup ######################################################
+##############################################################################
+Set up partitions. This includes a swap space, doc space, and / root. This will need its own section to quickly be able to set up the dual boot of Mate - Arch with proper swap sharing.
+Installation is easy. Once it's installed, here's what I like to use.
+
+
+### Packages: ###
+    - Chrome # Browser
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome-stable_current_amd64.deb
+        # Consider trying Chromium! How is the cross-compatability?
+    - vim # text editor
+    - Asunder # CD ripper
+    - transmission # torrent client
+    - stellarium # planetarium
+    - pinta # image editor
+    - wireshark # network monitor
+    - terminator # terminal emulator
+    - tmux # terminal multiplexe
+    	> cd ~ && wget -O - "https://www.dropbox.com/download?plat-lnx.x86_64" | tar xzf -
+	> ~/.dropbox-dist/dropboxd
+	- click 'start dropbox on startup'
+    - git
+    - mercurial
+
+
+### Optional Packages ###
+    - youtube-dl # for downloading youtube videos, of course
+    - CHIRP # ham radio flasher
+    - virtualbox # virtual machine frontend
+    - retroarch # emulator kernel manager
+    - ncdu # I've found this useful for seeing the relative size of directories
+    - mc # midnight commander, file browser. Reminds me of my computer when I was 10.
+    - guayadeque music player # for now. I'm not content with my music players.
+
+
+
+### Dotfiles ###
+	TODO: Need to find a place to put these so you can quickly resort them.
+	cp -rf .vim  ~/
+	> cp -rt .config ~/.config # merges the two config folders.
+		# /.config
+		#     |
+		# /asunder /neofetch /transmission /pluma /terminator
+	> cp .tmux.conf ~/.tmux.conf
+
+	- .bashrc:
+	append this to the bottom of the file:
+	    #######################
+	    # Extra Customization #
+	    #######################
+	    # enable terminal vi mode
+	    set -o vi
+	    # enable optional shell feature autocd
+	    shopt -s autocd
+
+	    # autostart multiplexer
+	    if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+	            tmux attach -t default || tmux new -s default
+	    fi
+
+	    if [ -d "~/bin" ] ; then
+		export PATH="$~/bin:$PATH"
+	    fi
+
+
+### Settings ###
+    - I had to enable line-out audio on my desktop. This may not be an issue elsewhere.
+    - Screen tearing with NVIDIA graphics card:
+    	- Open Nvidia X Server Settings > X Server Display Configuration > Advanced > Force Full Composition Pipeline > Save to X Configuration File > '/etc/X11/xorg.conf'; or
+	- nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+    - Mate Tweak > unclick 'show desktop icons'.
+    - set terminator as the preferred terminal
+
+
+### SSH ###
+> ssh-keygen -t rsa -C "[email]
+
+
+### vim LaTeX ###
+> sudo apt install texlive-full mupdf xdotool
+    # if Vim8, default package manager is fine
+    - cd .vim/pack/rac/start/
+    > git clone https://github.com/ying17zi/vim-live-latex-preview.git
+    > add ~/.vim/pack/rac/start/vim-live-latex-preview/bin to $PATH
+
+
+### Python / Jupyter ###
+> mkdir ~/data/apps
+    > cd ~/data/apps
+    > wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    > bash Miniconda3-latest-Linux-x86_64.sh
+    	- install in ~/data/apps/miniconda
+
+
+### Touhou ###
+    - wine # is not an emulator
+
