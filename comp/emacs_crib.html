@@ -1,0 +1,79 @@
+<!--
+.%%%%%...%%..%%...%%%%...%%..%%...........%%%%....%%%%..
+.%%..%%...%%%%...%%..%%..%%%.%%..........%%..%%..%%..%%.
+.%%%%%.....%%....%%%%%%..%%.%%%..........%%%%%%..%%.....
+.%%..%%....%%....%%..%%..%%..%%..........%%..%%..%%..%%.
+.%%..%%....%%....%%..%%..%%..%%..........%%..%%...%%%%..
+........................................................
+-->
+
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>emacs</title>
+    <link rel="stylesheet" type="text/css" href="../clean.css">
+  </head>
+
+<body>
+<h1>emacs crib sheet</h1>
+
+<table>
+  <tr> <td>C - Control</td> <td>M - Meta (alt)</td> </tr>
+  <tr> <td>Often refers to lines and characters; independent of your writing.</td> <td>Often words, paragraphs, sentences. Units of language.</td> </tr>
+</table>
+<hr>
+
+<h2>navigation</h2>
+<table>
+  <tr> <td>C-v : move forward one screeen</td> <td>M-v : move backward one screen</td></tr>
+</table>
+C-l : clear + move screen to center on cursor <br>
+C-l C-l : Move the line the cursor is on to the top of the screen <br>
+C-l (repeat) : Toggles between moving the current line to the center>top>bottom of the screen, cyclically. <br>
+</body>
+<pre>
+     C-p                 C-p : previous line
+      ^                  C-n : next line
+C-b <-|-> C-f            C-b : back (space)
+      v                  C-f : forward (space)
+     C-n
+     
+M-b <---> M-f            M-b : back (word)
+                         M-f : forward (word)
+</pre>
+
+C-a : beginning of line <br>
+C-e : end of line <br>
+M-< : beginning of document <br>
+M-> : end of document <br>
+
+<hr><h2>files</h2>
+C-x k : kill buffer <br>
+
+<hr><h2>windows</h2>
+C-x 2 : split in two windows <br>
+C-x 0 : move to 'other' window <br>
+[esc] C-v : scroll lower window <br>
+C-x 4 C-f : open file in lower window <br>
+C-x 3 : split window right <br>
+C-x 2 : split window below <br>
+
+<hr><h2>frames</h2>
+C-x 5 2 : create new frame <br>
+C-x 5 0 : delete current frame <br>
+C-x 5 1 : delete all other frames <br>
+
+<hr><h2>recursive edit level</h2>
+[esc] x3 : kill minibuffer (M-x, for instance.)
+
+<hr><h2>searching</h2>
+C-s : displays incremental search. C-s again moves to the next match. [return] to exit. <br>
+C-r : incremental reverse search <br>
+
+<hr> <h2>help</h2>
+C-h ? : big help <br>
+C-h c : simple help for a term <br>
+C-h k : documentation for a command <br>
+C-h f : documentation for a function <br>
+</html>
