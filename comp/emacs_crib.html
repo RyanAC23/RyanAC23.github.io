@@ -18,13 +18,16 @@
 <body>
 <h1>emacs crib sheet</h1>
 
+
+<h2>default behavior</h2>
 <table>
   <tr> <td>C - Control</td> <td>M - Meta (alt)</td> </tr>
   <tr> <td>Often refers to lines and characters; independent of your writing.</td> <td>Often words, paragraphs, sentences. Units of language.</td> </tr>
+  <tr> <td> C-x : eXtended commands</td> <td> M-x : named commands</td></tr>
 </table>
 <hr>
 
-<h2>navigation</h2>
+<h3>navigation</h3>
 <table>
   <tr> <td>C-v : move forward one screeen</td> <td>M-v : move backward one screen</td></tr>
 </table>
@@ -48,10 +51,44 @@ C-e : end of line <br>
 M-< : beginning of document <br>
 M-> : end of document <br>
 
-<hr><h2>files</h2>
+<hr><h3>general</h3>
+C-u [number] [command] <br>
+or <br>
+M-[number] [command] : repeat [command] [number] times <br>
 C-x k : kill buffer <br>
+C-g : safely stop emacs or a command <br>
+<i>electric behavior</i> : when pressing a key does more than insert the character pressed (fornatting, tab filling, etc.) <br>
+C-k : delete to the end of the current line <br>
+M-k : delete to the end of the current sentence <br>
+C-[spc] : highlight chunk of text <br>
+C-w : kill the highlighted text <br>
+'Killed' text is not deleted. You can reinsert it by 'yanking' it from the killed space. <br>
+C-k : kill current line <br>
+C-y : yank killed lines <br>
+Multiple lines will be yanked together if killed consecutively. <br>
+C-/ : undo <br>
+C-_ : undo <br>
+C-x u : undo <br>
+<br>
+C-u [number] C-v <br>
+or <br>
+C-u [number] M-v : move forward or backward [number] lines <br>
 
-<hr><h2>windows</h2>
+<hr><h3>files</h3>
+C-x C-f : find and open file in new buffer <br>
+C-x C-s : save <br>
+C-x C-b : list buffers <br>
+C-x b : switch to other buffer <br>
+C-x C-c : end session, asking to save changes <br>
+<i>in terminal:</i> C-z : suspend emacs. Return with fg or %emacs <br>
+<i>find and replace:</i> M-x [string] : asks for search, then text to replace. <br>
+<i>Note: named commands can be tab or [spc] completed.</i> <br>
+<br>
+Autosave data is by default saved in the same directory as the file, flanked by pound signs. Ex: hello.c -> #hello.c#<br>
+M-x recover-this-file <br>
+
+<hr><h3>windows</h3>
+C-x 1 : kill all windows except the active one containing the cursor. <br>
 C-x 2 : split in two windows <br>
 C-x 0 : move to 'other' window <br>
 [esc] C-v : scroll lower window <br>
@@ -59,21 +96,31 @@ C-x 4 C-f : open file in lower window <br>
 C-x 3 : split window right <br>
 C-x 2 : split window below <br>
 
-<hr><h2>frames</h2>
+<hr><h3>frames</h3>
 C-x 5 2 : create new frame <br>
 C-x 5 0 : delete current frame <br>
 C-x 5 1 : delete all other frames <br>
 
-<hr><h2>recursive edit level</h2>
+<hr><h3>recursive edit level</h3>
 [esc] x3 : kill minibuffer (M-x, for instance.)
 
-<hr><h2>searching</h2>
+<hr><h3>searching</h3>
 C-s : displays incremental search. C-s again moves to the next match. [return] to exit. <br>
 C-r : incremental reverse search <br>
 
-<hr> <h2>help</h2>
+<hr> <h3>help</h3>
 C-h ? : big help <br>
 C-h c : simple help for a term <br>
 C-h k : documentation for a command <br>
 C-h f : documentation for a function <br>
+C-h m : info on current mode <br>
 </html>
+
+<hr><h3>edit modes</h3>
+M-x : text mode (' now part of word) <br>
+** : indicates unsaved changes are present <br>
+M-x : auto-fill-mode <br>
+    C-u [number] C-x f : change autofill column width to [number] <br>
+    M-q : auto refill a paragraph <br>
+    
+<hr><h2>my customization</h2>
