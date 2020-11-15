@@ -1,0 +1,9 @@
+# RyanAC23.github.io
+
+Archival site rescued from geocities.
+
+* TODO About Me needs some work.
+* TODO NEW logo next to most recent posts (criteria for 'most recent' tbd)
+* TODO make new page, update history. Find a way to itemize entries and come up with a script that auto displays the five most recent of these on the front page.
+* TODO put dotfiles in new repo and link to it. Site should contain my full setup instructions for installing ubuntu-mate and archlinux from scratch, as well as a separate section explainin my jupyter notebook workflow.
+* TODO a script auto updating packages in apt / conda, and then running autoremove / clean -p, would be neat.

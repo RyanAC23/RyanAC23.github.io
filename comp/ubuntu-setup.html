@@ -13,10 +13,10 @@
 <title><!--rac Ubuntu Mate Setup--></title>
 <link rel="stylesheet" href="style.css"> <!--CSS-->
             </head>
-<body class="main" TEXT="#FFFFFF" VLINK="#00FFFF" BGCOLOR="#000000"
-    BACKGROUND="../img/bgs/bgpurplecotton.gif"> <!--CSS-->
+	    <body class="main" TEXT="#FFFFFF" VLINK="#00FFFF" BGCOLOR="#000000"
+		  BACKGROUND="../img/bgs/bgpurplecotton.gif"> <!--CSS-->
 
-<pre>
+		<pre>
 ##############################################################################
 # New Ubuntu Mate Setup ######################################################
 ##############################################################################
@@ -39,7 +39,7 @@ Installation is easy. Once it's installed, here's what I like to use.
 - tmux # terminal multiplexe
     > cd ~ && wget -O - "https://www.dropbox.com/download?plat-lnx.x86_64" | tar xzf -
     > /.dropbox-dist/dropboxd
-    - lick 'start dropbox on startup'
+    - click 'start dropbox on startup'
 - git
 - mercurial
 - tree # I find myself using this often.
@@ -197,24 +197,26 @@ TODO: make a master list of emu games, systems
 - Wine # A Dilbert joke name. I don't use this much.
 - Steam # some games still work. Chat client.
 
-</pre>
+		</pre>
 
+		<pre>
+		During T480 initial setup:
+		> installed chrome
+		> sudo apt install vim transmission stellarium pinta wireshark tmux git mercurial tree gfortran ranger newsboat
+		> sudo apt install rxvt-unicode w3m libx11-dev libxft-dev xsel asunder ffmpeg mpv youtube-dl chirp ncdu gparted neofetch
+		> sudo add-apt-repository ppa:anonbeat/guayadeque
+		> sudo apt install guayadeque
+		> ssh-keygen -t rsa -C "[email]"
+		> sudo apt install texlive-full mupdf xdotool
+		> wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+		> sudo dpkg -i google-chrome-stable_current_amd64.deb
+		> wget https://repo.continuum.io/ [ ]
+		> bash Miniconda-latest-Linux-x86_64.sh
+		> conda env create -f environment.jupyter.yml
 
-During T480 initial setup:
-> installed chrome
-> sudo apt install vim transmission stellarium pinta wireshark tmux git mercurial tree gfortran ranger newsboat
-> sudo apt install rxvt-unicode w3m libx11-dev libxft-dev xsel asunder ffmpeg mpv youtube-dl chirp ncdu gparted neofetch
-> sudo add-apt-repository ppa:anonbeat/guayadeque
-> sudo apt install guayadeque
-> ssh-keygen -t rsa -C "[email]"
-> sudo apt install texlive-full mupdf xdotool
-> wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-> sudo dpkg -i google-chrome-stable_current_amd64.deb
-> wget https://repo.continuum.io/ [ ]
-> bash Miniconda-latest-Linux-x86_64.sh
-> conda env create -f environment.jupyter.yml
-
-Subsequent programs:
-> sudo apt install emacs
-> sudo apt install screenkey
-Keep in mind that you can kill screenkey with <code>pkill -f screenkey</code>
+		Subsequent programs:
+		> sudo apt install emacs
+		> sudo apt install screenkey
+		Keep in mind that you can kill screenkey with <code>pkill -f screenkey</code>
+		</pre>
+		11.01.2020 - Transmission, tmux, dropbox, stellarium, xscreensaver xscreensaver-data-extra xscreensaver-gl-extra</code> For 3D Maze screensaver (Windows 95)

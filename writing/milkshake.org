@@ -1,0 +1,167 @@
+#+Title: [Milk] Shakespeare
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="clean.css" />
+#+OPTIONS: toc:1
+#+OPTIONS: num:nil
+# shakespeare stuff
+
+* Beginning
+WHAT AM I INTERESTED IN? The works. I am not insterested in Shakespeare the person. When you begin from scratch reading about circumstances around plays and around what is known regarding their composition and release, there isn't a promising amount of concrete knowledge. At some point critics must hit a saturation limit in their lives where they choose to believe that, since all data is circumstantial and Shakespeare's accomplishments are colossal, that Shakespeare MUST have been one man and MUST have written all of his attributed works. I don't want to make as strong a statement as "There Was No Shakespeare", because the question is ultimately immaterial to me - it seems a fruitless battle.
+
+#+BEGIN_EXPORT html
+<blockquote>
+The method he favors is gleaning from my fiction what he supposes to be actual, "real-life," impressions and then popping them back into my novels and considering my characters in that inept light--rather like the Shakesperean scholar who deduced Shakespeare's mother from the plays and then discovered allusions to her in the very passages he had twisted to manufacture the lady.
+
+- Vladimir Nabokov, NYT Book Review, 7 Nov. 1971
+</blockquote>
+#+END_EXPORT
+
+Let's not be the mystery gentleman to whom this letter was a response. Narrowing consideration to the plays and leaving aside the man won't give you Matrix vision, but you'll be on your way to learning kung-fu.
+
+* The Plays: Comedies
+** The Comedy of Errors
+** The Taming of the Shrew
+** The Two Gentlemen of Verona
+** Love's Labour's Lost
+** A Midsummer Night's Dream
+** The Merchant of Venice
+** Much Ado About Nothing
+** As You Like It
+** Twelfth Night
+** The Merry Wives of Windsor
+** All's Well That Ends Well
+** Measure for Measure
+** Pericles
+** Cymbeline
+** The Winter's Tale
+** The Tempest
+
+* The Plays: Histories
+** I King Henry VI
+** II King Henry VI
+** III King Henry VI
+** Richard III
+** Richard II
+** I King Henry IV
+** II King Henry IV
+** King Henry V
+** King John
+** King Henry VIII
+
+* The Plays: Tragedies
+** Romeo and Juliet
+** Hamlet
+** Macbeth
+** King Lear
+** Othello
+** Titus Andronicus
+** Troilus and Cressida
+** Julius Caesar
+** Antony and Cleopatra
+** Coriolanus
+** Timon of Athens
+
+* Other Stuff
+** Venus and Adonis
+** The Rape of Lucrece
+** The Sonnets
+** Other Poems
+** Two Noble Kinsmen
+** Sir Thomas More
+** King Edward III
+
+* Settings
+  [[http://shakespeare-online.com/plays/playsettings.html][settings
+]]
+* Sources
+** Plutarch
+** Holinshed
+** Chaucer
+
+* Editors and Critics
+A list of names and impressions. Mileage will vary.
+** Frank Kermode
+** William Empson
+** A.C. Bradley
+** Kenneth Muir
+** Harold Bloom
+
+* Editors and Critics - Old School Players
+** Samuel Taylor "Porlock" Coleridge
+** Samuel Johnson
+** Alexander Pope
+
+* TODO Eigenvalue Decomposition
+
+* paste from letter
+** COMEDIES
+*** /The Comedy of Errors/
+    Two twins grow up separately with two twin servants, and end up in the same city at the same time. Anime plot hijinks ensue. Mom and Dad turn out to be in town, too.
+*** /The Taming of the Shrew/
+    A frame story that forgets to go back to the outer layer at the end. A woman gets married to a dude. You referenced Petruchio to me once recently, so I assume you have some familiarity with this one.
+*** /The Two Gentlemen of Verona/
+    Absolutely awful. Legendary in my mind for ending with a near rapemurder that in the last page is flipped to "Nah bruh you should marry her actually."
+*** /Love's Labour's Lost/
+    This one has dancing Russians and the punchline is that the women pull a mean joke on the men and then tell them they'll consider marriage if they don't jerk off for a year.
+*** /A Midsummer Night's Dream/
+    Excellent, as you know. All of Uranus' moons are named after characters from this and /The Tempest/.
+*** /The Merchant of Venice/
+    If nothing else, the source of the famous Shylock (the merchant of Venice, of indeterminate race). The first of a few plays where the day is saved by a bossy woman in drag. Your reminder that comedies were performed for rabble and drunks kicked in here, though I hadn't gotten that much needed prodding yet (I read the plays in this order (save The Tempest)).
+*** /Much Ado About Nothing/
+    A frustrating play where eavesdropping both causes and solves the main thread of the plot. Bros before Hoes is obliterated here. Ultimately I enjoyed this one but most of the comedies are fragile, implausible works. Romeo and Juliet without the suicides.
+*** /As You Like It/
+    More drag. This one featuring Jaques the whiner, and his famous seven ages of man monologue. It wasn't until I read this that I recalled having to memorize this very speech in 9th grade drama class - recovering that memory was a small shock. The rhythm is still in my head but the words are not, so I believe that I must have memorized it the night before. Harold Bloom's anime girlfriend comes from this pastoral play. Other than the character Jaques (who acts miserable and stays miserable by choice) this was a bore. Oh, and the 'bad guy' is essentially Hamlet's uncle if he suddenly realized at the climax that he was being a douche and lamely apologized.
+*** /Twelfth Night/
+    More drag but I liked this play. Mean jokes are played on a minor character who never gets set straight, and there's a line in the play that made me giggle like an idiot which was immediately committed to memory. A 'Sebastian' appears in Twelfth 'Night'.
+*** /The Merry Wives of Windsor/
+    Asinine.
+*** /All's Well That Ends Well/
+    Some jackass cheats on the woman the king has told him to marry, but the woman pulls a switcheroo in the dark and he gets her pregnant and she gets to say "TRICK, I'm your WIFE!" Not a motivating follow-up to Merry Wives. There's a whole Wikipedia article on the [[https://en.wikipedia.org/wiki/Bed_trick][bed trick...]]
+*** /Measure for Measure/
+    ... which comes back up here. There are things about this play that I enjoyed but there's nothing here that couldn't be found in some other play of the canon.
+*** /Pericles/
+    A stupid play where the start of all the woes is that an incestuous father and daughter make up a riddle, the answer of which is that they are boning each other. And Pericles figures it out. He has a daughter and then she appears to die and his wife appears to die and Pericles is sad and then a decade later or some such nonsense he finds out that they are alive and everyone hugs. Echoes of /The Comedy of Errors/ at the end.
+*** /Cymbeline/
+    A better version of many plays above. This is one of the later plays chronologically and it shows, along with the next one. One of few comedies to involve straight up murder.
+*** /The Winter's Tale/
+    Worth reading along with /Cymbeline/. A better version of /Pericles/, complete with a time skip. The character Paulina makes me uneasy. There's a hilarious line in this play that there's really no arguing with. From Wikipedia;
+
+#+BEGIN_EXPORT html
+<blockquote>
+A violent storm suddenly appears, wrecking the ship on which Antigonus arrived. He wishes to take pity on the child, but is chased away in one of Shakespeare's most famous stage directions: "Exit, pursued by a bear."
+</blockquote>
+#+END_EXPORT
+
+There is no indication that a bear is present until that line.
+*** /The Tempest/
+    You know all about this one. My copy of Sir Frank's edition arrived last week, but I haven't read it yet.
+
+** HISTORIES
+   Divided into two tetralogies; this is contested by SUPERFANS but since we're rejecting the notion of a single man Shakespeare with a unified plan, who cares? It's a convenient grouping.
+
+*** Original Tetralogy - 1-3 /Henry VI/, /Richard III/
+    The Henry VI trilogy is fairly flat but that flatness was still more interesting to me than a handful of the comedies. They're 100% fiction but the structure of following a history book (Holinshed) makes them better structured than the bad comedies, even if they're the dullest history plays.
+
+    /Richard III/ started to suck me in more, and I don't think it was just because after three chronologically linked plays I had built up a cast of characters already. The source of two big quotes - "Now is the winter of our discontent" and "My kingdom for a horse!" Lots of murder and lots of names of British dukes that all start to blend together.
+
+*** /King John/
+    A standalone unique because it tied the Robin Hood myth to a specific time for me (King John is the "evil" prince John of Robin Hood). The character of the Bastard was noteworthy but there were long gauntlets of this one I had to force down.
+
+*** Prequel Tetralogy - /Richard II/, 1-2 /Henry IV/, /Henry V/
+    This is the good stuff. /Richard II/ you could skip if you were going for the bare minimum, but you'll definitely need to pick up both parts of /Henry IV/, the source of the famout Falstaff character. I haven't started /Henry V/ yet.
+
+"The better part of valor is discretion." I did not expect this adage to have a concrete source but there it is.
+
+*** /Henry VIII/
+    Along with /Henry V/ I haven't read this yet. This is the play that burned down the Globe... I think Sir Frank mentioned that in /The Age of Shakespeare/.
+
+** POEMS
+   The main three poetic works are the sonnets, /Venus and Adonis/, and /The Rape of Lucrece/. If there was some great reason my life was supposed to change from reading the sonnets, I missed it. I thought they were mostly a repetitive slog. I read them over months on my phone from [[http://shakespeares-sonnets.com/][this site]] with tolerable commentary (my biggest mistake was getting the Arden editions of the poems, edited by 19th wave feminists spending hundreds of pages talking about sex and homosex and Freud). /Venus and Adonis/ was more worth the effort, I felt. /The Rape of Lucrece/ would have been better but I think it's about three times longer than it should have been, and I started to read diagonally in the middle. I don't have a lot to say about these.
+
+** How to Hack Shakespeare Studies
+What advice would you give someone reading Shakespeare to make the field open up from the dysmal oversaturated rubbish it appears to be?
+This business of heirarchies, folios, bad quartos, good quartos, ur-palimpsests, co-authors, publication order, line variants... there's a stack full of this. Another stack of acting history, feminist lenses, arguments of character homosexuality. ignore this garbage. Libraries disappear.
+What are you left with? Not much. But the potential of that information left over is much higher, and easier to parse on your own.
+What IS interesting and useful? This is harder for me to answer. The main benefit of a standalone and heavily annotated edition are the footnotes defining senescent words. These are valuable (and after 20 plays you might find that you don't lean on them nearly as much as you did!)
+Performance history: who played who unimportant and unknown. Who the play was presented to is. The Ben Jonson essay convinced me of this. Only through maybe 1613 (1611ish is the projected date of /The Tempest/). Any later performances would be like filling 30 pages of Nabokov criticism with who read /Lolita/ after 1978.
+
+   This is only a start of something I've thought about as I skimmed questionable sections of Arden/Oxford/Cambridge play intros.
