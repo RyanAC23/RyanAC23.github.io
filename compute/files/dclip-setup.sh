@@ -56,16 +56,41 @@ GitRepoGetter(){
 	git clone git@github.com:RyanAC23/rac_dotfiles.git $HOME/repos/rac_dotfiles
     fi
     if [ -f $HOME/repos/rac_dotfiles/setup_docs/packageinstall.sh ]; then
-    echo "dotfiles repo present. Be sure to run PackageInstall.sh as root, and
-    to run DotfilesSetter.sh second.
-    (The order might not actually matter.)"
+    echo "dotfiles repo present. Be sure to run PackageInstall.sh
+    	 as root, and to run DotfilesSetter.sh second.
+    	 (The order might not actually matter.)"
     fi
 }
 
-GitSetter1(){
+GitSetter(){
     echo "Initializing global git settings."
-    [ ! `git config user.email` ] && git config --global user.email || git config user.email
-    [ ! `git config user.name` ] && git config --global user.name || git config user.name
+    read -p "Set your global git settings now? (y/n): " GITSET
+    case $GITSET in
+	y) read -p "email: " EMAIL_VAL
+	   read -p "username: " USER_VAL
+	   echo "email: $EMAIL_VAL
+	   	  user: $USER_VAL"
+	   read -p "Is this ok? (y/n): " CONFIRM_VAL
+	   case $CONFIRM_VAL in
+	       y) git config --global user.email $EMAIL_VAL
+		  git config --global user.name $USER_VAL
+		  echo "Setting emacs as default git editor."
+		  git config --global core.editor "emacs -nw -Q"
+		  ;;
+	       n) GitSetter
+		  ;;
+	       *) echo "Invalid option."
+		  GitSetter
+		  ;;
+	   esac
+	   ;;
+	n) echo "Not configuring global git settings."
+	   ;;
+	*) GitSetter
+	   ;;
+    esac
+    # [ ! `git config user.email` ] && git config --global user.email || git config user.email
+    # [ ! `git config user.name` ] && git config --global user.name || git config user.name
 }
 
 ##### Main Routine #####
@@ -75,4 +100,4 @@ sshUtil
 
 GitRepoGetter
 
-GitSetter1
+GitSetter
