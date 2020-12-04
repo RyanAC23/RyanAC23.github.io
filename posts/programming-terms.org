@@ -1,0 +1,23 @@
+#+TITLE: PROG -> EN Dictionary
+#+SUBTITLE: For Computer Science Spies
+
+#+INCLUDE: "./html_export_common.org"
+
+Since some people are overly pedantic about terminology.
+
+* Brass Tax
+parameter - Variable named in the parenthesized list of a function definition. Sometimes called the formal argument.
+argument - Value used in a call of the function. Sometimes called the actual argument.
+
+* Cheesy but sometimes you need to understand what the hell people are talking about
+[[https://en.wikipedia.org/wiki/Syntactic_sugar][syntactic sugar]] - Syntax in a programming language that makes it more human readable, without introducing any new functionality[fn:1]. Overuse can make your[fn:2] program diabetic.
+
+# \begin{equation}
+# \int_{0}^{\infty}e^{-a x^2 / \sigma} =
+# \end{equation}
+
+* Footnotes
+
+[fn:1] I can define footnotes from below.
+
+[fn:2] Inline footnotes!

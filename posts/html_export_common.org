@@ -1,0 +1,15 @@
+# Set the Background as the website default
+#+HTML_HEAD: <body class="main" TEXT="#FFFFFF" VLINK="#00FFFF" BGCOLOR="#000000" BACKGROUND="../resources/images/bgs/bgpurplecotton.gif">
+
+# Use the simple css stylesheet
+#+HTML_HEAD: <link rel="stylesheet" href="../resources/css/style.css">
+
+# Clean up the TOC and postamble
+#+OPTIONS: toc:2
+#+OPTIONS: html-postamble:nil
+
+# set mathjax as default tex processer
+#+OPTIONS: tex:t
+
+# Export files to a different directory for cleanliness
+#+BIND: org-export-directory "./exports"
