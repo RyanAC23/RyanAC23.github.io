@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-12-04 Fri 19:57 -->
+<!-- 2020-12-04 Fri 20:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ubuntu Mate Setup</title>
@@ -239,33 +239,34 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org66ca8ca">Step 1: Install Ubuntu Mate</a></li>
-<li><a href="#org06df59e">Step 2: Set up ssh / git</a>
+<li><a href="#orgd4f223f">Step 1: Install Ubuntu Mate</a></li>
+<li><a href="#org09a4854">Step 2: Set up ssh / git</a>
 <ul>
-<li><a href="#org2de9cb3">Installed in this section:</a></li>
+<li><a href="#orgcc73957">Installed in this section:</a></li>
 </ul>
 </li>
-<li><a href="#orge7df472">Step 3: Install Packages</a>
+<li><a href="#orga5860bc">Step 3: Install Packages</a>
 <ul>
-<li><a href="#orgf5d45ca">Change git and hg default editor</a></li>
-<li><a href="#org264024a">Manually get Chrome</a></li>
+<li><a href="#org1c65b60">Change git and hg default editor</a></li>
+<li><a href="#orgd5a6ef7">Manually get Chrome</a></li>
 </ul>
 </li>
-<li><a href="#org75341f3">Step 4: Sync configuration files</a></li>
-<li><a href="#orgc2135cc">Extra: Old Notes</a>
+<li><a href="#org49d7a78">Step 4: Sync configuration files</a></li>
+<li><a href="#orgd0d54fa">Extra: Old Notes</a>
 <ul>
-<li><a href="#orgeb45f9d">Nvidia screen tearing fix</a></li>
-<li><a href="#orga96a77d">Vim-Live-Latex-Preview</a></li>
-<li><a href="#org4bc18e7">Python / Miniconda</a></li>
+<li><a href="#org028976a">Nvidia screen tearing fix</a></li>
+<li><a href="#org65602c3">Vim-Live-Latex-Preview</a></li>
+<li><a href="#org747e919">Python / Miniconda</a></li>
 </ul>
 </li>
+<li><a href="#orgc315e67">Extra: dpkg results</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org66ca8ca" class="outline-2">
-<h2 id="org66ca8ca">Step 1: Install Ubuntu Mate</h2>
-<div class="outline-text-2" id="text-org66ca8ca">
+<div id="outline-container-orgd4f223f" class="outline-2">
+<h2 id="orgd4f223f">Step 1: Install Ubuntu Mate</h2>
+<div class="outline-text-2" id="text-orgd4f223f">
 <p>
 Most recently (as of <span class="timestamp-wrapper"><span class="timestamp">[2020-12-04 Fri]</span></span>) I installed Ubuntu Mate 20.04 from a flash drive (DataStick Pro by Centon, 4GB).
 </p>
@@ -293,9 +294,9 @@ Most recently (as of <span class="timestamp-wrapper"><span class="timestamp">[20
 </div>
 </div>
 
-<div id="outline-container-org06df59e" class="outline-2">
-<h2 id="org06df59e">Step 2: Set up ssh / git</h2>
-<div class="outline-text-2" id="text-org06df59e">
+<div id="outline-container-org09a4854" class="outline-2">
+<h2 id="org09a4854">Step 2: Set up ssh / git</h2>
+<div class="outline-text-2" id="text-org09a4854">
 <p>
 You need to set up ssh to clone the repository containing my config files. This can be done by downloading and running the script saved publicly on github:
 </p>
@@ -322,9 +323,9 @@ This script will run apt to install <code>git</code> and <code>xclip</code>, one
 </div>
 </div>
 
-<div id="outline-container-org2de9cb3" class="outline-3">
-<h3 id="org2de9cb3">Installed in this section:</h3>
-<div class="outline-text-3" id="text-org2de9cb3">
+<div id="outline-container-orgcc73957" class="outline-3">
+<h3 id="orgcc73957">Installed in this section:</h3>
+<div class="outline-text-3" id="text-orgcc73957">
 <ul class="org-ul">
 <li><code>xclip</code>: Not as essential as it is convenient, this will allow you to auto copy id<sub>rsa.pub</sub> for quick ssh action. The script runs the following command:</li>
 </ul>
@@ -341,9 +342,9 @@ This script will run apt to install <code>git</code> and <code>xclip</code>, one
 </div>
 </div>
 
-<div id="outline-container-orge7df472" class="outline-2">
-<h2 id="orge7df472">Step 3: Install Packages</h2>
-<div class="outline-text-2" id="text-orge7df472">
+<div id="outline-container-orga5860bc" class="outline-2">
+<h2 id="orga5860bc">Step 3: Install Packages</h2>
+<div class="outline-text-2" id="text-orga5860bc">
 <p>
 To install packages with a script, navigate to <code>~/repos/rac_dotfiles/setup_docs</code>. The install script needs to be run as sudo, to loop through packages to install from <code>/rac_dotfiles/packages/*.csv</code>.
 </p>
@@ -374,23 +375,23 @@ This script does a number of things:
 </ol>
 </div>
 
-<div id="outline-container-orgf5d45ca" class="outline-3">
-<h3 id="orgf5d45ca">Change git and hg default editor</h3>
-<div class="outline-text-3" id="text-orgf5d45ca">
+<div id="outline-container-org1c65b60" class="outline-3">
+<h3 id="org1c65b60">Change git and hg default editor</h3>
+<div class="outline-text-3" id="text-org1c65b60">
 <p>
 Now that git and emacs are installed, you can configure the default editor.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">&gt; git config --global core.editor <span style="color: #deb887;">"emacs -nw -Q</span>
-<span style="color: #deb887;">                -load ~/.emacs.d/light_init.el"</span>
+<pre class="src src-sh">&gt; git config --global core.editor <span style="color: #95e454;">"emacs -nw -Q</span>
+<span style="color: #95e454;">                -load ~/.emacs.d/light_init.el"</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org264024a" class="outline-3">
-<h3 id="org264024a">Manually get Chrome</h3>
-<div class="outline-text-3" id="text-org264024a">
+<div id="outline-container-orgd5a6ef7" class="outline-3">
+<h3 id="orgd5a6ef7">Manually get Chrome</h3>
+<div class="outline-text-3" id="text-orgd5a6ef7">
 <p>
 In case you don't want to use the script but also don't want to use a mouse:
 </p>
@@ -403,9 +404,9 @@ In case you don't want to use the script but also don't want to use a mouse:
 </div>
 </div>
 
-<div id="outline-container-org75341f3" class="outline-2">
-<h2 id="org75341f3">Step 4: Sync configuration files</h2>
-<div class="outline-text-2" id="text-org75341f3">
+<div id="outline-container-org49d7a78" class="outline-2">
+<h2 id="org49d7a78">Step 4: Sync configuration files</h2>
+<div class="outline-text-2" id="text-org49d7a78">
 <p>
 Now run the config script.
 </p>
@@ -450,13 +451,13 @@ The setup is now complete.
 </div>
 </div>
 
-<div id="outline-container-orgc2135cc" class="outline-2">
-<h2 id="orgc2135cc">Extra: Old Notes</h2>
-<div class="outline-text-2" id="text-orgc2135cc">
+<div id="outline-container-orgd0d54fa" class="outline-2">
+<h2 id="orgd0d54fa">Extra: Old Notes</h2>
+<div class="outline-text-2" id="text-orgd0d54fa">
 </div>
-<div id="outline-container-orgeb45f9d" class="outline-3">
-<h3 id="orgeb45f9d">Nvidia screen tearing fix</h3>
-<div class="outline-text-3" id="text-orgeb45f9d">
+<div id="outline-container-org028976a" class="outline-3">
+<h3 id="org028976a">Nvidia screen tearing fix</h3>
+<div class="outline-text-3" id="text-org028976a">
 <ul class="org-ul">
 <li>I had to enable line-out audio on my desktop. This may not be an issue elsewhere.</li>
 <li><p>
@@ -475,19 +476,19 @@ Force Full Composition Pipeline &gt; Save to X Configuration File &gt;
 </div>
 </div>
 
-<div id="outline-container-orga96a77d" class="outline-3">
-<h3 id="orga96a77d">Vim-Live-Latex-Preview</h3>
-<div class="outline-text-3" id="text-orga96a77d">
+<div id="outline-container-org65602c3" class="outline-3">
+<h3 id="org65602c3">Vim-Live-Latex-Preview</h3>
+<div class="outline-text-3" id="text-org65602c3">
 <p>
 This gave me a live updating LaTeX environment in vim. It worked well, but I've switched to working in chunks and away from vim. If this is your work style, give it a shot:
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">&gt; sudo apt install texlive-full mupdf xdotool
-<span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">if Vim8, default package manager is fine</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">if Vim8, default package manager is fine</span>
 &gt; cd .vim/pack/rac/start/
 &gt; git clone https://github.com/ying17zi/vim-live-latex-preview.git
-&gt; add ~/.vim/pack/rac/start/vim-live-latex-preview/bin to $<span style="color: #4eee94;">PATH</span>
-<span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">vim copy register</span>
+&gt; add ~/.vim/pack/rac/start/vim-live-latex-preview/bin to $<span style="color: #cae682;">PATH</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">vim copy register</span>
 &gt; sudo apt install vim-gtk3
 </pre>
 </div>
@@ -500,14 +501,14 @@ register with  "+yy. After that, it should be on your main clipboard.
 </div>
 </div>
 
-<div id="outline-container-org4bc18e7" class="outline-3">
-<h3 id="org4bc18e7">Python / Miniconda</h3>
-<div class="outline-text-3" id="text-org4bc18e7">
+<div id="outline-container-org747e919" class="outline-3">
+<h3 id="org747e919">Python / Miniconda</h3>
+<div class="outline-text-3" id="text-org747e919">
 <div class="org-src-container">
 <pre class="src src-sh">&gt; mkdir ~/data/apps
 &gt; cd ~/data/apps
-&gt; wget <span style="color: #deb887;">"https://repo.continuum.io/miniconda/</span>
-<span style="color: #deb887;">       Miniconda3-latest-Linux-x86_64.sh"</span>
+&gt; wget <span style="color: #95e454;">"https://repo.continuum.io/miniconda/</span>
+<span style="color: #95e454;">       Miniconda3-latest-Linux-x86_64.sh"</span>
 &gt; bash Miniconda3-latest-Linux-x86_64.sh
 </pre>
 </div>
@@ -531,8 +532,8 @@ Now make new environments with ipykernel, including a base jupyter environment.
 The jupyter environment MUST include nb<sub>conda</sub>, and all others NEED ipykernel.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">&gt; wget <span style="color: #deb887;">"https://anaconda.org/mforbes/jupyter/</span>
-<span style="color: #deb887;">       2019.03.31.153852/download/environment.jupyter.yml"</span>
+<pre class="src src-sh">&gt; wget <span style="color: #95e454;">"https://anaconda.org/mforbes/jupyter/</span>
+<span style="color: #95e454;">       2019.03.31.153852/download/environment.jupyter.yml"</span>
 &gt; conda env create --file environment.jupyter.yml
 &gt; conda create -n py3
 &gt; conda activate py3
@@ -553,6 +554,31 @@ At the end of any massive install session:
 </pre>
 </div>
 </div>
+</div>
+</div>
+<div id="outline-container-orgc315e67" class="outline-2">
+<h2 id="orgc315e67">Extra: dpkg results</h2>
+<div class="outline-text-2" id="text-orgc315e67">
+<p>
+In an ipython session:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">from</span> IPython.display <span style="color: #8ac6f2; font-weight: bold;">import</span> HTML
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682;">show</span>(res):
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> HTML(<span style="color: #95e454;">'&lt;pre style="font-size: 6pt;line-height: normal;"&gt;{</span>
+<span style="color: #95e454;">        }&lt;/pre&gt;'</span>.<span style="color: #e5786d;">format</span>(<span style="color: #95e454;">"\n"</span>.join(res)))
+<span style="color: #cae682;">res</span> = !dpkg -l | grep ii
+show(res)
+</pre>
+</div>
+
+<p>
+See one of the dated links below for a comprehensive list of packages.
+</p>
+
+<ul class="org-ul">
+<li><a href="dpkg-output.html">2020-12-04 Fri</a></li>
+</ul>
 </div>
 </div>
 </div>

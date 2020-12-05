@@ -167,3 +167,17 @@ At the end of any massive install session:
 > clean -p --dry-run
 > clean -p -y
 #+END_SRC
+* Extra: dpkg results
+In an ipython session:
+#+BEGIN_SRC python
+from IPython.display import HTML
+def show(res):
+    return HTML('<pre style="font-size: 6pt;line-height: normal;">{
+        }</pre>'.format("\n".join(res)))
+res = !dpkg -l | grep ii
+show(res)
+#+END_SRC
+
+See one of the dated links below for a comprehensive list of packages.
+
+-  [[file:dpkg-output.org][2020-12-04 Fri]]
