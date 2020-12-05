@@ -1,0 +1,169 @@
+#+Title: Ubuntu Mate Setup
+#+Subtitle: [2020-12-04 Fri]
+#+INCLUDE: "./html_export_common.org"
+#+INDEX: Ubuntu Mate Setup
+#+OPTIONS: num:nil
+
+* Step 1: Install Ubuntu Mate
+Most recently (as of [2020-12-04 Fri]) I installed Ubuntu Mate 20.04 from a flash drive (DataStick Pro by Centon, 4GB).
+- From the installer, select /minimal install/.
+- Turn off proprietary extras
+  - On my hp pavillion HPE desktop, this step was necessary or installation would fail. I'm not sure why but it might not be required in the future. Be aware.
+  - I keep a partition with some terabyte of data on my desktop; be sure to install the OS to the proper partition, which should be labelled as such in the partition list.
+- Click /Erase disk and install Ubuntu Mate/
+- Choose your timezone and contine.
+
+#+BEGIN_SRC sh
+> NAME: ryan
+> COMPUTER NAME: ryan-VirtualBox
+> PASSWORD: 0
+#+END_SRC
+
+- Restart to continue.
+
+* Step 2: Set up ssh / git
+You need to set up ssh to clone the repository containing my config files. This can be done by downloading and running the script saved publicly on github:
+
+#+BEGIN_SRC sh
+> wget https://ryanac23.github.io/linux/files/dclip-setup.sh
+> chmod +700 dclip-setup.sh
+> ./dclip-setup.sh
+#+END_SRC
+
+This script will run apt to install ~git~ and ~xclip~, one of which is necessary to clone the config repository. After setting up ssh in ~~/.ssh~ (by default), the contents of ~id_rsa.pub~ will be copies to your clipboard by ~xclip~, and the GitHub homepage will open in the default browser, which is most likely ~Firefox~. Sign in and add this ssh key before pressing enter as the script prompts. If done correctly, it will now clone my config files to ~~/repos/rac_dotfiles~. Move to that directory to contine.
+
+- *nb*) This is a good time to set up your global git settings.
+
+#+BEGIN_SRC sh
+> git config --global user.email [email]
+> git config --global user.name  [name]
+#+END_SRC
+
+** Installed in this section:
+-  ~xclip~: Not as essential as it is convenient, this will allow you to auto copy id_rsa.pub for quick ssh action. The script runs the following command:
+
+#+BEGIN_SRC sh
+> cat ~/.ssh/id_rsa.pub | xclip -selection c
+#+END_SRC
+
+- ~git~: You'll need this to get your repos!
+
+* Step 3: Install Packages
+To install packages with a script, navigate to ~~/repos/rac_dotfiles/setup_docs~. The install script needs to be run as sudo, to loop through packages to install from ~/rac_dotfiles/packages/*.csv~.
+- *NB) If you aren't the author running this script on his personal machines, you will need to edit this script first. at the top of the document, change USER=ryan to the name of your account.*
+
+#+BEGIN_SRC sh
+> cd ~/repos/rac_dotfiles/setup_docs/
+> sudo ./packageinstall.sh
+#+END_SRC
+
+This script does a number of things:
+1) Checks if it's being run as root.
+2) Asks if you'd like to run ~sudo apt upgrade~, and does so if you confirm.
+3) Asks if you'd like to run the full package install or only the core. The packages will be discussed in the next section.
+3b) If ~full~ was selected, the ~Google-Chrome~ installer is also downloaded from the internet, and installed. Additionally, Dropbox will be set up. Full takes much longer than core, mostly due to the massive ~texlive-full~, particularly its font files.
+3c) Conda should be installed as well, but I have not added that to these scripts yet.
+4) Asks if you'd like to run ~apt upgrade~ and ~apt autoremove~, then ends the script.
+
+** Change git and hg default editor
+ Now that git and emacs are installed, you can configure the default editor.
+ #+BEGIN_SRC sh
+ > git config --global core.editor "emacs -nw -Q
+                 -load ~/.emacs.d/light_init.el"
+ #+END_SRC
+
+** Manually get Chrome
+In case you don't want to use the script but also don't want to use a mouse:
+#+BEGIN_SRC sh
+> wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+> sudo dpkg -i google-chrome-stable_current_amd64.deb
+#+END_SRC
+
+* Step 4: Sync configuration files
+Now run the config script.
+#+BEGIN_SRC sh
+> ./dotfiles_util.sh
+#+END_SRC
+You should not be root (but don't worry, the script will end if you are). This script, somewhat redundantly if the previous steps have been followed, checks for the repos/dotfiles directory and clones it if it cannot be found. It then symlinks four directories to ~$HOME~:
+- ~~/.emacs.d~
+- ~~/.urxvt~
+- ~~/bin~
+- ~~/.guayadeque~
+It then /copies/ four files to ~$HOME~:
+- ~/.bashrc
+- ~/.bash_aliases
+- ~/.tmux.conf
+- ~/.Xresources
+For the penultimate step, the repository's copy of the ~.config~ directory is merged with the one present at ~$HOME~. This will change the gtk theme and many other settings; *a restart will be required for these to come into effect.*
+
+Finally, the script will copy three backgrounds from Dropbox to various locations. The background in ~/usr/share/...~ is for the login screen, and the other two are wallpapers to be set depending on my mood or machine.
+#+BEGIN_SRC sh
+> ~/.config/backgrounds/{desktop_wall.jpg,laptop_wall.png}
+> /usr/share/backgrounds/ubuntu-mate-common/login.png
+#+END_SRC
+
+The setup is now complete.
+
+* Extra: Old Notes
+** Nvidia screen tearing fix
+- I had to enable line-out audio on my desktop. This may not be an issue elsewhere.
+- Screen tearing with NVIDIA graphics card:
+    - Open Nvidia X Server Settings > X Server Display Configuration > Advanced >
+    Force Full Composition Pipeline > Save to X Configuration File >
+        '/etc/X11/xorg.conf'; or
+- nvidia-settings --assign CurrentMetaMode="nvidia-auto-select
+    +0+0 { ForceFullCompositionPipeline = On }"
+
+** Vim-Live-Latex-Preview
+This gave me a live updating LaTeX environment in vim. It worked well, but I've switched to working in chunks and away from vim. If this is your work style, give it a shot:
+#+BEGIN_SRC sh
+> sudo apt install texlive-full mupdf xdotool
+# if Vim8, default package manager is fine
+> cd .vim/pack/rac/start/
+> git clone https://github.com/ying17zi/vim-live-latex-preview.git
+> add ~/.vim/pack/rac/start/vim-live-latex-preview/bin to $PATH
+# vim copy register
+> sudo apt install vim-gtk3
+#+END_SRC
+- If gvim is present (graphical vim) then a new register is unlocked. Copy to this special
+register with  "+yy. After that, it should be on your main clipboard.
+
+** Python / Miniconda
+
+#+BEGIN_SRC sh
+> mkdir ~/data/apps
+> cd ~/data/apps
+> wget "https://repo.continuum.io/miniconda/
+       Miniconda3-latest-Linux-x86_64.sh"
+> bash Miniconda3-latest-Linux-x86_64.sh
+#+END_SRC
+
+- install in ~/data/apps/miniconda
+Install minimal miniconda in base env, then make new environments for projects as necessary.
+
+#+BEGIN_SRC sh
+> conda update -y conda
+> conda update -y --all
+> conda list
+#+END_SRC
+
+Now make new environments with ipykernel, including a base jupyter environment.
+The jupyter environment MUST include nb_conda, and all others NEED ipykernel.
+#+BEGIN_SRC sh
+> wget "https://anaconda.org/mforbes/jupyter/
+       2019.03.31.153852/download/environment.jupyter.yml"
+> conda env create --file environment.jupyter.yml
+> conda create -n py3
+> conda activate py3
+> conda install ipykernel numpy matplotlib scipy
+> conda deactivate
+#+END_SRC
+This should now give you a jupyter server environment with py3 as a kernel option.
+At the end of any massive install session:
+
+#+BEGIN_SRC sh
+> conda update -y conda
+> update -y --all
+> clean -p --dry-run
+> clean -p -y
+#+END_SRC
