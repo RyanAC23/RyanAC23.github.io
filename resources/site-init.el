@@ -27,7 +27,7 @@
       '(("RyanAC23.github.io"
 	 :base-directory "_org/"
 	 :base-extension "org"
-	 :publishing-directory "./"
+	 :publishing-directory "public/"
 	 :recursive t
 	 :publishing-function org-html-publish-to-html
 	 :auto-sitemap t)

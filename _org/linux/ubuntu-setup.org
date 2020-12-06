@@ -6,12 +6,12 @@
 
 * Step 1: Install Ubuntu Mate
 Most recently (as of [2020-12-04 Fri]) I installed Ubuntu Mate 20.04 from a flash drive (DataStick Pro by Centon, 4GB).
-- From the installer, select /minimal install/.
-- Turn off proprietary extras
++ From the installer, select /minimal install/.
++ Turn off proprietary extras
   - On my hp pavillion HPE desktop, this step was necessary or installation would fail. I'm not sure why but it might not be required in the future. Be aware.
   - I keep a partition with some terabyte of data on my desktop; be sure to install the OS to the proper partition, which should be labelled as such in the partition list.
-- Click /Erase disk and install Ubuntu Mate/
-- Choose your timezone and contine.
++ Click /Erase disk and install Ubuntu Mate/
++ Choose your timezone and contine.
 
 #+BEGIN_SRC sh
 > NAME: ryan
