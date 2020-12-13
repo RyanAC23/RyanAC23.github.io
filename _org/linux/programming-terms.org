@@ -3,14 +3,28 @@
 
 #+INCLUDE: "./html_export_common.org"
 
-Since some people are overly pedantic about terminology.
+Since some people are pedantic about terminology.
 
-* Brass Tax
-parameter - Variable named in the parenthesized list of a function definition. Sometimes called the formal argument.
+* Core (C)
+- parameter - Variable named in the parenthesized list of a function definition. Sometimes called the formal argument.
 argument - Value used in a call of the function. Sometimes called the actual argument.
+- string constant: A sequence of zero or more characters surrounded by double quotes.
+- string literal: See string constant.
+- character constant: A number that produces the numeric value of a character on the machine's character set.
+- enumeration constant:
+- compound statement: see /block/.
+- block: A group of declarations and statements equivalent to a single statement, marked by the braces { and }. Also called a /compound statement/.
+- expression: The condition within parenthesis in a declaration. For example, the C ~for~ statement contains three expressions: ~for(/exp1/; /exp2/; /exp3/)~.
+- statement: The lines associated with an /expression/ to execute within a control flow.
+** Operators
+- binary operator: An operator that indicates an operation of [[https://en.wikipedia.org/wiki/Arity][arity]] two; it takes two arguments and returns one. Examples include +, -, *, /, %
+- bitwise operation: An operation that affects the input on the level of its individual bits. An example is the [[https://en.wikipedia.org/wiki/Bit-reversal_permutation][bit-reversal permutation]] used in some Fast Fourier Transform (FFT) algorithms.
+- Compound assignment operators: Operators assigning a variable to the result of the binary operation of itself and another argument.[fn:3] As an example, ~x += 5~ will add five to the value of x, a more compact form of ~x = x + 5~.
 
-* Cheesy but sometimes you need to understand what the hell people are talking about
-[[https://en.wikipedia.org/wiki/Syntactic_sugar][syntactic sugar]] - Syntax in a programming language that makes it more human readable, without introducing any new functionality[fn:1]. Overuse can make your[fn:2] program diabetic.
+
+* Cheesy but Often Heard in the Wild
+[[https://en.wikipedia.org/wiki/Syntactic_sugar][- syntactic sugar]]: Syntax in a programming language that makes it more human readable, without introducing any new functionality[fn:1]. Overuse can make your[fn:2] program diabetic.
+
 
 # \begin{equation}
 # \int_{0}^{\infty}e^{-a x^2 / \sigma} =
@@ -21,3 +35,5 @@ argument - Value used in a call of the function. Sometimes called the actual arg
 [fn:1] I can define footnotes from below.
 
 [fn:2] Inline footnotes!
+
+[fn:3] There is certainly a clearer way to explain this.
