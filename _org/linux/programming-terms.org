@@ -5,7 +5,7 @@
 
 Since some people are pedantic about terminology.
 
-* Core (C)
+* C
 - parameter - Variable named in the parenthesized list of a function definition. Sometimes called the formal argument.
 argument - Value used in a call of the function. Sometimes called the actual argument.
 - string constant: A sequence of zero or more characters surrounded by double quotes.
@@ -16,11 +16,87 @@ argument - Value used in a call of the function. Sometimes called the actual arg
 - block: A group of declarations and statements equivalent to a single statement, marked by the braces { and }. Also called a /compound statement/.
 - expression: The condition within parenthesis in a declaration. For example, the C ~for~ statement contains three expressions: ~for(/exp1/; /exp2/; /exp3/)~.
 - statement: The lines associated with an /expression/ to execute within a control flow.
-** Operators
-- binary operator: An operator that indicates an operation of [[https://en.wikipedia.org/wiki/Arity][arity]] two; it takes two arguments and returns one. Examples include +, -, *, /, %
-- bitwise operation: An operation that affects the input on the level of its individual bits. An example is the [[https://en.wikipedia.org/wiki/Bit-reversal_permutation][bit-reversal permutation]] used in some Fast Fourier Transform (FFT) algorithms.
-- Compound assignment operators: Operators assigning a variable to the result of the binary operation of itself and another argument.[fn:3] As an example, ~x += 5~ will add five to the value of x, a more compact form of ~x = x + 5~.
+- member:
+- structure:
+- pointer:
 
+
+** Operators
+ - binary operator: An operator that indicates an operation of [[https://en.wikipedia.org/wiki/Arity][arity]] two; it takes two arguments and returns one. Examples include +, -, *, /, %
+ - bitwise operation: An operation that affects the input on the level of its individual bits. An example is the [[https://en.wikipedia.org/wiki/Bit-reversal_permutation][bit-reversal permutation]] used in some Fast Fourier Transform (FFT) algorithms.
+ - Compound assignment operators: Operators assigning a variable to
+   the result of the binary operation of itself and another
+   argument.[fn:3] As an example, ~x += 5~ will add five to the value
+   of x, a more compact form of ~x = x + 5~.
+
+
+* Tab notes from K&R:
+-  printf syntax, %3d prints number in a field 3 digits wide
+  %6.2f    print as floating point, 6 digits wide and 2 digits after the decimal
+- #define for aliases;  #define [alias name] [replacement text]
+  EX: #define square(x) (x)*(x)
+  Parentheses matter; x*x for something like z+1 gives you z+1*z+1 = 2z+1 =/= z^2+2z+1
+- A character in single quotes is a character constant and represents a number. 'A' = 65
+- Good idea to be explicit, name states IN = 1 and OUT = 0 to increase readability
+- /parameter/ - a variable named in the parenthesized function list;
+  /argument/  - the value used for the parameter in a call of the function
+- strings stored as array of characters ending in '\0' to mark the end
+  "hello\n" -> |h|e|l|l|o|\n|\0|
+- variables declared inside a function are local
+- beware value types being promoted. If int = 16 bits, long = 32 bits,
+  -1L < 1U, because 1U is promoted to unsigned long.
+  -1L > 1UL, because -1L is converted to UL and appears to be a huge positive number
+- function prototype will force arguments to fit type.
+  double sqrt(double);
+  call: root2 = sqrt(2); -> int 2 becomes double 2.0
+- increment operators work in different orders, left to right
+  x = ++n; \\ increments n by 1, then assigns it to x
+  x = n++; \\ assigns n to x, then increments n by 1
+- /ternary/ operators ?, : work as if, else
+  if x, y; else z; works as x ? y : z;
+- else can be omitted if no default action is needed, or you can use it for error checking
+- switch statements default to /default/ if none of the cases are satisfied
+- if a function takes no arguments, use function(void) as a good clarity practice
+- external variables defined outside of any function.
+- functions are always external, since you can't define a function inside a function.
+- function call with some operation func1(func2() - func2()) bad - order not defined for argument funcs.
+- tell gcc to manually link the math library with -lm
+- extern [type] [name] declare for the file that [name] is type [type] but it does not create variables or allocate memory.
+- excess register declarations will be passed over silently. safe but pay attention.
+- variables declared in an inner block '{' are invisible to the outer blocks (until the matching right brace '}' )
+- debugging print macro example:
+  #define dprint(expr) printf(#expr " = %g\n", expr)
+  dprint(x/y) -> printf("x/y = %g\n", x/y)
+  strings are concatenated.
+- p = &c; -> address of c assigned to variable p: p points to c.
+- * /dereferencing/ or /indirection/ operator; accesses the object the pointer points to.
+- pointers can allow functions to access and change values
+- int a[10];  \\ defines array of size 10
+  int *pa;    \\ creates pointer pa to an integer
+  pa = &a[3]; \\ sets pa's address to that of a[3]
+- reference to a[i] can be written *(a+i)
+- array names are not variable
+- pointer array: an array of pointers. Rows of such an array need not be the same size
+- int (*comp)(void *, void *) =/= int *comp(void *, void *)
+  The first reads "comp is a pointer to a function" but the second says "comp is a function returning a pointer to an int"
+- structures are collections of one or more variables
+- struct point {
+    int x;
+    int y;
+  };
+  struct point pt;
+  Now pt.x and pt.y will return the values
+- instead of passing a large structure to a function, pass a pointer
+- unions - ways to manipulate different types of data in the same area of storage
+
+* Data Types
+- char
+- int
+- float
+- double
+
+- short
+- long
 
 * Cheesy but Often Heard in the Wild
 [[https://en.wikipedia.org/wiki/Syntactic_sugar][- syntactic sugar]]: Syntax in a programming language that makes it more human readable, without introducing any new functionality[fn:1]. Overuse can make your[fn:2] program diabetic.
