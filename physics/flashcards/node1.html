@@ -1,0 +1,591 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
+<HEAD>
+<TITLE>Classical Mechanics</TITLE>
+<META NAME="description" CONTENT="Classical Mechanics">
+<META NAME="keywords" CONTENT="flashcards">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+
+<LINK REL="STYLESHEET" HREF="flashcards.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="flashcards.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><BODY BACKGROUND='./bgpoolwater.gif'>
+<A
+ HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="flashcards.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="flashcards.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A>   <BR>
+<B> Next:</B> <A
+ HREF="node2.html">Electrodynamics</A>
+<B>Up:</B> <A
+ HREF="flashcards.html">Prelim Flashcards</A>
+<B> Previous:</B> <A
+ HREF="flashcards.html">Prelim Flashcards</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A ID="SECTION00010000000000000000">
+Classical Mechanics</A>
+</H1>
+<DIV class="RIGHT">
+<SPAN  CLASS="textbf">Euler-Lagrange Equation</SPAN>
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.96ex; vertical-align: -2.21ex; " SRC="img1.svg"
+ ALT="$\displaystyle \delta I = \int_a^b f(z, \dot{z}, x) dx = 0$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">perturb slightly;&nbsp;<IMG STYLE="height: 1.75ex; vertical-align: -0.30ex; " SRC="img2.svg"
+ ALT="$\displaystyle z \rightarrow z + \epsilon n$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 6.06ex; vertical-align: -2.31ex; " SRC="img3.svg"
+ ALT="$\displaystyle \frac{dI}{d\epsilon} = \int_a^b \bigg( \frac{\partial f}{\partial...
+...ot{z}}{d\epsilon} + \frac{\partial f}{\partial x}\frac{dx}{d\epsilon} \bigg) dx$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 6.06ex; vertical-align: -2.31ex; " SRC="img4.svg"
+ ALT="$\displaystyle \frac{dI}{d\epsilon} \vert _{\epsilon = 0} = \int_a^b \bigg( \fra...
+...artial f}{\partial z} \eta + \frac{\partial f}{\partial\dot{z}} \eta' \bigg) dx$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+Integrate by parts;
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 6.38ex; vertical-align: -2.42ex; " SRC="img5.svg"
+ ALT="$\displaystyle \int_a^b \bigg( \frac{\partial f}{\partial z} - \frac{d}{dx} \fra...
+...\eta dx + \bigg[\frac{\partial f}{\partial\dot{z}}\eta \bigg]^b_a \rightarrow 0$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">if stationary.</SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 6.06ex; vertical-align: -2.31ex; " SRC="img6.svg"
+ ALT="$\displaystyle 0 = \int_a^b \bigg(\frac{\partial f}{\partial z} = \frac{d}{dx} \frac{\partial f}{\partial\dot{z}}\eta \bigg) dx$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 6.41ex; vertical-align: -2.42ex; " SRC="img7.svg"
+ ALT="$\displaystyle \boxed{\frac{\partial f}{\partial z} = \frac{d}{dx}\frac{\partial f}{\partial\dot{z}} = 0}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+A differentiable functional is stationary at a local maximum or minimum.
+<BR></DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Lagrange Multipliers</SPAN>
+<BR>
+Lagrange Multipliers allow optimization without explicit parameterization. Look for the stationary points of a function <SPAN CLASS="MATH"><IMG STYLE="height: 2.53ex; vertical-align: -0.69ex; " SRC="img8.svg"
+ ALT="$f(x)$"></SPAN> subject to the constraint <SPAN CLASS="MATH"><IMG STYLE="height: 2.53ex; vertical-align: -0.69ex; " SRC="img9.svg"
+ ALT="$g(x) = c$"></SPAN>
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.53ex; vertical-align: -0.69ex; " SRC="img10.svg"
+ ALT="$\displaystyle \mathcal{L}(x,\lambda) = f(x) + \lambda g(x)$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+This can also be formed by modifying Lagrange's equations, rather than the lagrangian itself.
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.97ex; vertical-align: -1.70ex; " SRC="img11.svg"
+ ALT="$\displaystyle \frac{d}{dt} \frac{\partial\mathcal{L}}{\partial\dot{x}} - \frac{\partial\mathcal{L}}{\partial x} = \lambda \frac{\partial f}{\partial x}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+Example: Atwood's Machine
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.86ex; vertical-align: -1.70ex; " SRC="img12.svg"
+ ALT="$\displaystyle \mathcal{L} = \frac{1}{2}m_1\dot{x}_1^2 + \frac{1}{2}m_2\dot{x}_2^2 + m_1 g x_1 + m_2 g x_2$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.17ex; vertical-align: -0.45ex; " SRC="img13.svg"
+ ALT="$\displaystyle x_1 + x_2 = l =$">&nbsp; &nbsp;const.</SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">Turn the E-L crank.</SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.27ex; vertical-align: -0.56ex; " SRC="img14.svg"
+ ALT="$\displaystyle m_1 \ddot{x_1} - m_1 g = \lambda$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.27ex; vertical-align: -0.56ex; " SRC="img15.svg"
+ ALT="$\displaystyle m_2 \ddot{x_2} - m_2 g = \lambda$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.21ex; vertical-align: -0.56ex; " SRC="img16.svg"
+ ALT="$\displaystyle \ddot{x}_1 = - \ddot{x}_2;$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.21ex; vertical-align: -0.56ex; " SRC="img17.svg"
+ ALT="$\displaystyle m_1 \ddot{x}_1 - m_1 g = -m_2 \ddot{x}_1 - m_2 g$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 6.88ex; vertical-align: -2.77ex; " SRC="img18.svg"
+ ALT="$\displaystyle \rightarrow \boxed{\ddot{x}_1 = \frac{(m_1 - m_2) g}{m_1 + m_2}}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+This is also of extreme use in statistical mechanics, where lagrange multipliers often appear in the form of the chemical potential <SPAN CLASS="MATH"><IMG STYLE="height: 1.66ex; vertical-align: -0.56ex; " SRC="img19.svg"
+ ALT="$\mu$"></SPAN>.
+<BR></DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Hamiltonian Mechanics</SPAN>
+<BR>
+One can obtain the Hamiltonian via a Legendre transform of the Lagrangian:
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.53ex; vertical-align: -0.69ex; " SRC="img20.svg"
+ ALT="$\displaystyle \mathcal{H}(q,p) = p\dot{q} - \mathcal{L}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+The equations of motion are 
+<BR></DIV>
+<UL>
+<LI><!-- MATH
+ $\frac{\partial\mathcal{H}}{\partial p} = \dot{q}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.42ex; vertical-align: -1.24ex; " SRC="img21.svg"
+ ALT="$\frac{\partial\mathcal{H}}{\partial p} = \dot{q}$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\frac{\partial\mathcal{H}}{\partial q} = -\dot{p}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.42ex; vertical-align: -1.24ex; " SRC="img22.svg"
+ ALT="$\frac{\partial\mathcal{H}}{\partial q} = -\dot{p}$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\frac{\partial\mathcal{H}}{\partial t} = - \frac{\partial\mathcal{L}}{\partial t}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.10ex; vertical-align: -0.91ex; " SRC="img23.svg"
+ ALT="$\frac{\partial\mathcal{H}}{\partial t} = - \frac{\partial\mathcal{L}}{\partial t}$"></SPAN>
+</LI>
+</UL>
+<DIV class="RIGHT">
+The Hamiltonian is the cotangent bundle over t.
+</DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Poisson Bracket</SPAN>
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.42ex; vertical-align: -2.15ex; " SRC="img24.svg"
+ ALT="$\displaystyle \{A,B\}_{q,p} = \frac{\partial A}{\partial q}\frac{\partial B}{\partial p} - \frac{\partial A}{\partial p}\frac{\partial B}{\partial q}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.97ex; vertical-align: -1.70ex; " SRC="img25.svg"
+ ALT="$\displaystyle \frac{df}{dt} = \{f,\mathcal{H} \} + \frac{\partial f}{\partial t}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+There is a strong relation between the poisson bracket of classical mechanics and the commutator of quantum mechanics.
+</DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Moment of Inertia</SPAN>
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.35ex; vertical-align: -2.11ex; " SRC="img26.svg"
+ ALT="$\displaystyle I = \int r^2 dm = \int r^2 \rho(x) dV$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.35ex; vertical-align: -2.11ex; " SRC="img27.svg"
+ ALT="$\displaystyle I_{ij} = \int \rho(x) [\delta^i_j \left\vert\mathbf{x}\right\vert^2 - x_ix_j] d^3x$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">Parallel Axis Theorem:&nbsp;<IMG STYLE="height: 2.96ex; vertical-align: -0.81ex; " SRC="img28.svg"
+ ALT="$\displaystyle I_{parallel} = I_{cm} + MR^2$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+</DIV>
+<UL>
+<LI>point mass: <SPAN CLASS="MATH"><IMG STYLE="height: 2.14ex; vertical-align: -0.11ex; " SRC="img29.svg"
+ ALT="$I = mr^2$"></SPAN>
+</LI>
+<LI>rod through center: <!-- MATH
+ $I = \frac{1}{12} mL^2$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.01ex; vertical-align: -0.91ex; " SRC="img30.svg"
+ ALT="$I = \frac{1}{12} mL^2$"></SPAN>
+</LI>
+<LI>rod through end: <!-- MATH
+ $I = \frac{1}{3}mL^2$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.01ex; vertical-align: -0.91ex; " SRC="img31.svg"
+ ALT="$I = \frac{1}{3}mL^2$"></SPAN>
+</LI>
+<LI>thin hoop: <!-- MATH
+ $I = \frac{mr^2}{2}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.33ex; vertical-align: -0.91ex; " SRC="img32.svg"
+ ALT="$I = \frac{mr^2}{2}$"></SPAN> in x,y
+</LI>
+<LI>thin hoop (symmetric): <SPAN CLASS="MATH"><IMG STYLE="height: 2.14ex; vertical-align: -0.11ex; " SRC="img29.svg"
+ ALT="$I = mr^2$"></SPAN>
+</LI>
+<LI>sphere: <!-- MATH
+ $I = \frac{2}{5} mr^2$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.01ex; vertical-align: -0.91ex; " SRC="img33.svg"
+ ALT="$I = \frac{2}{5} mr^2$"></SPAN>
+</LI>
+</UL>
+<DIV class="RIGHT">
+</DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Euler Equations</SPAN>
+
+<BR>
+For rigid body rotations:
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 7.31ex; vertical-align: -3.14ex; " SRC="img34.svg"
+ ALT="$\displaystyle \boxed{\frac{d}{dt} \bigg\vert _I = \frac{d}{dt} \bigg\vert _B + \mathbf{\omega} \times ( \ \ \ ) }$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.87ex; vertical-align: -2.42ex; " SRC="img35.svg"
+ ALT="$\displaystyle \frac{d}{dt} \bigg\vert _I \mathbf{L} = \frac{d}{dt}\bigg\vert _B \mathbf{L} + \mathbf{\omega}\times \mathbf{L}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.36ex; vertical-align: -1.70ex; " SRC="img36.svg"
+ ALT="$\displaystyle \rightarrow \mathbf{\Gamma}^{(e)} = \mathbf{I}\cdot \frac{\mathbf{\omega}}{dt} + \mathbf{\omega} \times \mathbf{I}' \mathbf{\omega}'$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.97ex; vertical-align: -1.70ex; " SRC="img37.svg"
+ ALT="$\displaystyle \Gamma_1^{(e)} = I_1 \frac{d\omega_1}{dt} + \omega_2 I_3 \omega_3 - \omega_3 I_2 \omega_2$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 3.36ex; vertical-align: -0.77ex; " SRC="img38.svg"
+ ALT="$\displaystyle \Gamma_1^{(e)} = I_1 \dot{\omega_1} + \omega_2 \omega_3 (I_3 - I_2)$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">cyclic;&nbsp;<IMG STYLE="height: 4.83ex; vertical-align: -1.52ex; " SRC="img39.svg"
+ ALT="$\displaystyle \boxed{I_i \dot{\omega_i} = \omega_j \omega_k (I_j - I_k) + \Gamma_i^{(e)} }$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+This is especially useful when motion is constrained to be torque free; the <SPAN CLASS="MATH"><IMG STYLE="height: 1.79ex; vertical-align: -0.11ex; " SRC="img40.svg"
+ ALT="$\Gamma$"></SPAN> dependence drops out and the equations are much simpler.
+
+<BR></DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Euler Angles</SPAN>
+<SPAN  CLASS="textbf">TODO: PICTURE</SPAN>
+</DIV>
+<UL>
+<LI>Rotate about <SPAN CLASS="MATH"><IMG STYLE="height: 1.82ex; vertical-align: -0.11ex; " SRC="img41.svg"
+ ALT="$\hat{z}$"></SPAN> by <SPAN CLASS="MATH"><IMG STYLE="height: 1.21ex; vertical-align: -0.11ex; " SRC="img42.svg"
+ ALT="$\alpha$"></SPAN>; <SPAN CLASS="MATH"><IMG STYLE="height: 2.44ex; vertical-align: -0.56ex; " SRC="img43.svg"
+ ALT="$y \neq y'$"></SPAN> after rotation.
+</LI>
+<LI>Rotate about <SPAN CLASS="MATH"><IMG STYLE="height: 2.44ex; vertical-align: -0.56ex; " SRC="img44.svg"
+ ALT="$\hat{y}'$"></SPAN> by <SPAN CLASS="MATH"><IMG STYLE="height: 2.27ex; vertical-align: -0.56ex; " SRC="img45.svg"
+ ALT="$\beta$"></SPAN>
+</LI>
+<LI>Rotate around <SPAN CLASS="MATH"><IMG STYLE="height: 1.99ex; vertical-align: -0.11ex; " SRC="img46.svg"
+ ALT="$\hat{z}'$"></SPAN> by <SPAN CLASS="MATH"><IMG STYLE="height: 1.66ex; vertical-align: -0.56ex; " SRC="img47.svg"
+ ALT="$\gamma$"></SPAN>
+</LI>
+</UL>
+<DIV class="RIGHT">
+The dashed line is the line of nodes.
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.25ex; vertical-align: -1.28ex; " SRC="img48.svg"
+ ALT="$\displaystyle \boxed{\omega_1 = -\dot{\alpha} \sin{\beta} \cos{\gamma} + \dot{\beta} \cos{\gamma} }$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.25ex; vertical-align: -1.28ex; " SRC="img49.svg"
+ ALT="$\displaystyle \boxed{\omega_2 = \dot{\alpha} \sin{\beta} \sin{\gamma} + \dot{\beta} \cos{\gamma} }$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 3.71ex; vertical-align: -1.28ex; " SRC="img50.svg"
+ ALT="$\displaystyle \boxed{\omega_3 = \dot{\alpha} \cos{\beta} + \dot{\gamma}}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+Note: The angle projections always depend on the previous angle's rate of change, never a later one; i.e., <!-- MATH
+ $\dot{\alpha} \cos{\beta}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.27ex; vertical-align: -0.56ex; " SRC="img51.svg"
+ ALT="$\dot{\alpha} \cos{\beta}$"></SPAN> will occur, but NOT <!-- MATH
+ $\dot{\beta}\cos{\alpha}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.82ex; vertical-align: -0.56ex; " SRC="img52.svg"
+ ALT="$\dot{\beta}\cos{\alpha}$"></SPAN>
+<BR></DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Differential Scattering Cross Section</SPAN>
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.77ex; vertical-align: -2.31ex; " SRC="img53.svg"
+ ALT="$\displaystyle \frac{d\sigma}{d\Omega} = \frac{b}{\sin{\theta}} \left\vert\frac{db}{d\theta}\right\vert$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 1.82ex; vertical-align: -0.11ex; " SRC="img54.svg"
+ ALT="$\displaystyle d\sigma = 2\pi b db$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 1.82ex; vertical-align: -0.11ex; " SRC="img55.svg"
+ ALT="$\displaystyle d\Omega = 2 \pi \sin{\theta} d\theta$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 1.80ex; vertical-align: -0.11ex; " SRC="img56.svg"
+ ALT="$\displaystyle \textbf{TODO: DIAGRAM}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR></DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Gauss' Law for Newtonian Gravity</SPAN>
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.86ex; vertical-align: -1.70ex; " SRC="img57.svg"
+ ALT="$\displaystyle \mathcal{L}_{g} = -\rho(\mathbf{x},t)\phi(\mathbf{x},t) - \frac{1}{8\pi G}(\nabla\mathbf{\phi}(\mathbf{x},t))^2$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.86ex; vertical-align: -1.70ex; " SRC="img58.svg"
+ ALT="$\displaystyle \rightarrow -\rho = \frac{2}{8\pi G} \nabla^2{\phi}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.14ex; vertical-align: -1.28ex; " SRC="img59.svg"
+ ALT="$\displaystyle \boxed{\nabla^2\phi = 4\pi G \rho}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 3.71ex; vertical-align: -1.28ex; " SRC="img60.svg"
+ ALT="$\displaystyle \boxed{\mathbf{g} = -\nabla\mathbf{\phi}}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">Gauss' Law differential form:&nbsp;<IMG STYLE="height: 2.24ex; vertical-align: -0.56ex; " SRC="img61.svg"
+ ALT="$\displaystyle \nabla\cdot\mathbf{\mathbf{g}} = -4\pi G \rho$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">Gauss' Law integral form:&nbsp;<IMG STYLE="height: 5.35ex; vertical-align: -2.11ex; " SRC="img62.svg"
+ ALT="$\displaystyle \oint \nabla\cdot\mathbf{\mathbf{g}} dV$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.35ex; vertical-align: -2.11ex; " SRC="img63.svg"
+ ALT="$\displaystyle = \oint \mathbf{g} \cdot d\mathbf{\sigma} = -4\pi G M$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR></DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Relativistic Doppler Shift</SPAN>
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.53ex; vertical-align: -0.69ex; " SRC="img64.svg"
+ ALT="$\displaystyle p^{\mu} = \{ E, p^x, p^y, 0 \}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.97ex; vertical-align: -1.70ex; " SRC="img65.svg"
+ ALT="$\displaystyle v_{obs}^{\mu} = \{ \frac{dt}{d\tau}, \frac{dx}{d\tau} \} = \{ \frac{dt}{d\tau}, \gamma v_x \}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 4.97ex; vertical-align: -1.70ex; " SRC="img66.svg"
+ ALT="$\displaystyle E = p^{\mu}V_{\mu} = \omega \frac{dt}{d\tau} - \omega \cos{\theta}v_x\gamma$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.69ex; vertical-align: -0.69ex; " SRC="img67.svg"
+ ALT="$\displaystyle \omega' = \omega(\gamma - \cos{\theta}\gamma v_x)$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">transverse:&nbsp;<IMG STYLE="height: 7.15ex; vertical-align: -2.99ex; " SRC="img68.svg"
+ ALT="$\displaystyle \boxed{ \frac{\omega'}{\omega} = \frac{1 - v\cos{\theta}}{\sqrt{1-v^2}} }$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH">parallel:&nbsp;<IMG STYLE="height: 7.30ex; vertical-align: -2.76ex; " SRC="img69.svg"
+ ALT="$\displaystyle \boxed{ \frac{\omega'}{\omega} = \sqrt{ \frac{1 - v}{1 + v}}}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR></DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">Schwarzschild Metric</SPAN>
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 6.19ex; vertical-align: -2.31ex; " SRC="img70.svg"
+ ALT="$\displaystyle ds^2 = -\bigg( 1 - \frac{2GM}{r} \bigg) dt^2 + \bigg(1 + \frac{2GM}{r} \bigg)^{-1} dr^2 + r^2 d\Omega^2$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+<BR>
+Gravitational field outside a spherical mass; no charge/ angular momentum. Universal cosmological constant = 0.
+<BR></DIV>
+<P>
+<DIV class="RIGHT"><SPAN  CLASS="textbf">FLRW Metric</SPAN>
+<BR>
+Friedmann-Lemaître-Robertson-Walker metric for the curvature of the universe:
+</DIV><P></P>
+<DIV CLASS="mathdisplay"><TABLE CLASS="equation" >
+<TR >
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.49ex; vertical-align: -1.89ex; " SRC="img71.svg"
+ ALT="$\displaystyle ds^2 = -dt^2 + \frac{dr^2}{1-kr^2} + r^2 d\Omega^2$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+<DIV class="RIGHT">
+</DIV>
+<UL>
+<LI>k = -1 <!-- MATH
+ $\rightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 1.06ex; vertical-align: -0.11ex; " SRC="img72.svg"
+ ALT="$\rightarrow$"></SPAN> Hyperbolic curvature (negative). Substitute <!-- MATH
+ $r=\sinh{\theta}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 1.82ex; vertical-align: -0.11ex; " SRC="img73.svg"
+ ALT="$r=\sinh{\theta}$"></SPAN>.
+</LI>
+<LI>k =  0 <!-- MATH
+ $\rightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 1.06ex; vertical-align: -0.11ex; " SRC="img72.svg"
+ ALT="$\rightarrow$"></SPAN> Flat space. (No need to sub to integrate.)
+</LI>
+<LI>k =  1 <!-- MATH
+ $\rightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 1.06ex; vertical-align: -0.11ex; " SRC="img72.svg"
+ ALT="$\rightarrow$"></SPAN> Elliptical curvature (positive). Sub <!-- MATH
+ $r=\sin{\theta}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 1.82ex; vertical-align: -0.11ex; " SRC="img74.svg"
+ ALT="$r=\sin{\theta}$"></SPAN>.
+</LI>
+</UL>
+<DIV class="RIGHT">
+</DIV>
+<P>
+<DIV class="RIGHT">
+</DIV>
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="flashcards.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="flashcards.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A>   
+<BR>
+<B> Next:</B> <A
+ HREF="node2.html">Electrodynamics</A>
+<B> Up:</B> <A
+ HREF="flashcards.html">Prelim Flashcards</A>
+<B> Previous:</B> <A
+ HREF="flashcards.html">Prelim Flashcards</A></DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

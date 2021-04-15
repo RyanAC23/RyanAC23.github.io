@@ -1,0 +1,2093 @@
+\batchmode
+\documentclass[11pt,article]{article}
+\RequirePackage{ifthen}
+
+
+\title{\vspace{-4cm} Prelim Flashcards}
+\author{\raggedleft R.A. Corbin \today}
+\date{} % to remove the date below the line
+
+
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{bbold}
+
+%
+\providecommand{\abs}[1]{\left|#1\right|}%
+\providecommand{\dx}[2]{\frac{\partial#1}{\partial#2}}%
+\providecommand{\ddx}[2]{\frac{\partial^2#1}{\partial#2^2}}%
+\providecommand{\divv}[1]{\nabla\cdot\mathbf{#1}}%
+\providecommand{\curl}[1]{\nabla\times\mathbf{#1}}%
+\providecommand{\grad}[1]{\nabla\mathbf{#1}}%
+\providecommand{\ket}[1]{\left|#1\right\rangle}%
+\providecommand{\bra}[1]{\left\langle#1\right|}%
+\providecommand{\braket}[1]{\langle#1\rangle}%
+\providecommand{\aint}{\int_{-\infty}^{\infty}}%
+\providecommand{\vect}[1]{\mathbf{#1}} 
+
+
+
+
+\usepackage{xcolor}
+
+\usepackage[]{inputenc}
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{}%
+\catcode`\<=12\catcode`\_=\count@
+\newcommand{\providedcommand}[1]{\expandafter\providecommand\csname #1\endcsname}%
+\newcommand{\renewedcommand}[1]{\expandafter\providecommand\csname #1\endcsname{}%
+  \expandafter\renewcommand\csname #1\endcsname}%
+\newcommand{\newedenvironment}[1]{\newenvironment{#1}{}{}\renewenvironment{#1}}%
+\let\newedcommand\renewedcommand
+\let\renewedenvironment\newedenvironment
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\liih@math{\ifmmode$\else\bad@math\fi}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\let\if@boxedmulticols=\iftrue
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}%
+ \def\phantompar{\csname par\endcsname}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string \immediate\write\lthtmlwrite{#1}}}%
+\usepackage[tightpage,active]{preview}
+\newbox\lthtmlPageBox
+\newdimen\lthtmlCropMarkHeight
+\newdimen\lthtmlCropMarkDepth
+\long\def\lthtmlTightVBox#1#2{%
+    \setbox\lthtmlPageBox\vbox{\hbox{\catcode`\_=8 #2}}%
+    \lthtmlCropMarkHeight=\ht\lthtmlPageBox \advance \lthtmlCropMarkHeight 6pt
+    \lthtmlCropMarkDepth=\dp\lthtmlPageBox
+    \lthtmltypeout{^^J:#1:lthtmlCropMarkHeight:=\the\lthtmlCropMarkHeight}%
+    \lthtmltypeout{^^J:#1:lthtmlCropMarkDepth:=\the\lthtmlCropMarkDepth:1ex:=\the \dimexpr 1ex}%
+    \begin{preview}\copy\lthtmlPageBox\end{preview}}%
+\long\def\lthtmlTightFBox#1#2{%
+    \adjustnormalsize\setbox\lthtmlPageBox=\vbox\bgroup %
+    \let\ifinner=\iffalse \let\)\liih@math %
+    {\catcode`\_=8 #2}%
+    \@next\next\@currlist{}{\def\next{\voidb@x}}%
+    \expandafter\box\next\egroup %
+    \lthtmlCropMarkHeight=\ht\lthtmlPageBox \advance \lthtmlCropMarkHeight 6pt
+    \lthtmlCropMarkDepth=\dp\lthtmlPageBox
+    \lthtmltypeout{^^J:#1:lthtmlCropMarkHeight:=\the\lthtmlCropMarkHeight}%
+    \lthtmltypeout{^^J:#1:lthtmlCropMarkDepth:=\the\lthtmlCropMarkDepth:1ex:=\the \dimexpr 1ex}%
+    \begin{preview}\copy\lthtmlPageBox\end{preview}}%
+    \long\def\lthtmlinlinemathA#1#2\lthtmlindisplaymathZ{\lthtmlTightVBox{#1}{#2}}
+    \def\lthtmlinlineA#1#2\lthtmlinlineZ{\lthtmlTightVBox{#1}{#2}}
+    \long\def\lthtmldisplayA#1#2\lthtmldisplayZ{\lthtmlTightVBox{#1}{#2}}
+    \long\def\lthtmlinlinemathA#1#2\lthtmlindisplaymathZ{\lthtmlTightVBox{#1}{#2}}
+    \def\lthtmlinlineA#1#2\lthtmlinlineZ{\lthtmlTightVBox{#1}{#2}}
+    \long\def\lthtmldisplayA#1#2\lthtmldisplayZ{\lthtmlTightVBox{#1}{#2}}
+    \long\def\lthtmldisplayB#1#2\lthtmldisplayZ{\\edef\preveqno{(\theequation)}%
+        \lthtmlTightVBox{#1}{\let\@eqnnum\relax#2}}
+    \long\def\lthtmlfigureA#1#2\lthtmlfigureZ{\let\@savefreelist\@freelist
+        \lthtmlTightFBox{#1}{#2}\global\let\@freelist\@savefreelist}
+    \long\def\lthtmlpictureA#1#2\lthtmlpictureZ{\let\@savefreelist\@freelist
+        \lthtmlTightVBox{#1}{#2}\global\let\@freelist\@savefreelist}
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize 
+  \ifdim\wd\sizebox<\hsize\expandafter\hfill\fi \expandafter\vfill
+  \else\expandafter\vss\fi}%
+\providecommand{\selectlanguage}[1]{}%
+\makeatletter \tracingstats = 1 
+\providecommand{\Alpha}{\textrm{A}}
+\providecommand{\Rho}{\textrm{R}}
+\providecommand{\omicron}{\textrm{o}}
+\providecommand{\Omicron}{\textrm{O}}
+\providecommand{\Mu}{\textrm{M}}
+\providecommand{\Tau}{\textrm{T}}
+\providecommand{\Chi}{\textrm{X}}
+\providecommand{\Eta}{\textrm{H}}
+\providecommand{\Epsilon}{\textrm{E}}
+\providecommand{\Beta}{\textrm{B}}
+\providecommand{\Kappa}{\textrm{K}}
+\providecommand{\Zeta}{\textrm{Z}}
+\providecommand{\Iota}{\textrm{J}}
+\providecommand{\Nu}{\textrm{N}}
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}\lthtmltypeout{}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\lthtmltypeout{}%
+\makeatother
+\setcounter{page}{1}
+\onecolumn
+
+% !!! IMAGES START HERE !!!
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2145}%
+$\displaystyle \delta I = \int_a^b f(z, \dot{z}, x) dx = 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2146}%
+$\displaystyle z \rightarrow z + \epsilon n$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2147}%
+$\displaystyle \frac{dI}{d\epsilon} = \int_a^b \bigg( \frac{\partial f}{\partial z} \frac{dz}{d\epsilon} + \frac{\partial f}{\partial\dot{z}}\frac{d\dot{z}}{d\epsilon} + \frac{\partial f}{\partial x}\frac{dx}{d\epsilon}  \bigg) dx$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2148}%
+$\displaystyle \frac{dI}{d\epsilon} |_{\epsilon = 0} = \int_a^b \bigg( \frac{\partial f}{\partial z} \eta + \frac{\partial f}{\partial\dot{z}} \eta' \bigg) dx$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2149}%
+$\displaystyle \int_a^b \bigg( \frac{\partial f}{\partial z} - \frac{d}{dx} \frac{\partial f}{\partial\dot{z}}  \bigg)\eta dx + \bigg[\frac{\partial f}{\partial\dot{z}}\eta \bigg]^b_a \rightarrow 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2150}%
+$\displaystyle 0 = \int_a^b \bigg(\frac{\partial f}{\partial z} = \frac{d}{dx} \frac{\partial f}{\partial\dot{z}}\eta \bigg) dx$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2151}%
+$\displaystyle \boxed{\frac{\partial f}{\partial z} = \frac{d}{dx}\frac{\partial f}{\partial\dot{z}} = 0}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2153}%
+$ f(x)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2155}%
+$ g(x) = c$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2156}%
+$\displaystyle \mathcal{L}(x,\lambda) = f(x) + \lambda g(x)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2157}%
+$\displaystyle \frac{d}{dt} \frac{\partial\mathcal{L}}{\partial\dot{x}} - \frac{\partial\mathcal{L}}{\partial x} = \lambda \frac{\partial f}{\partial x}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2158}%
+$\displaystyle \mathcal{L} = \frac{1}{2}m_1\dot{x}_1^2 + \frac{1}{2}m_2\dot{x}_2^2 + m_1 g x_1 + m_2 g x_2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2159}%
+$\displaystyle x_1 + x_2 = l =$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2160}%
+$\displaystyle m_1 \ddot{x_1} - m_1 g = \lambda$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2161}%
+$\displaystyle m_2 \ddot{x_2} - m_2 g = \lambda$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2162}%
+$\displaystyle \ddot{x}_1 = - \ddot{x}_2;$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2163}%
+$\displaystyle m_1 \ddot{x}_1 - m_1 g = -m_2 \ddot{x}_1 - m_2 g$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2164}%
+$\displaystyle \rightarrow \boxed{\ddot{x}_1 = \frac{(m_1 - m_2) g}{m_1 + m_2}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2166}%
+$ \mu$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2167}%
+$\displaystyle \mathcal{H}(q,p) = p\dot{q} - \mathcal{L}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2169}%
+$ \frac{\partial\mathcal{H}}{\partial p} = \dot{q}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2171}%
+$ \frac{\partial\mathcal{H}}{\partial q} = -\dot{p}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2173}%
+$ \frac{\partial\mathcal{H}}{\partial t} = - \frac{\partial\mathcal{L}}{\partial t}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2174}%
+$\displaystyle \{A,B\}_{q,p} = \frac{\partial A}{\partial q}\frac{\partial B}{\partial p} - \frac{\partial A}{\partial p}\frac{\partial B}{\partial q}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2175}%
+$\displaystyle \frac{df}{dt} = \{f,\mathcal{H} \} + \frac{\partial f}{\partial t}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2176}%
+$\displaystyle I = \int r^2 dm = \int r^2 \rho(x) dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2177}%
+$\displaystyle I_{ij} = \int \rho(x) [\delta^i_j \left|\mathbf{x}\right|^2 - x_ix_j] d^3x$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2178}%
+$\displaystyle I_{parallel} = I_{cm} + MR^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2180}%
+$ I = mr^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2182}%
+$ I = \frac{1}{12} mL^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2184}%
+$ I = \frac{1}{3}mL^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2186}%
+$ I = \frac{mr^2}{2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2190}%
+$ I = \frac{2}{5} mr^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2191}%
+$\displaystyle \boxed{\frac{d}{dt} \bigg|_I = \frac{d}{dt} \bigg|_B + \mathbf{\omega} \times ( \  \ \  ) }$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2192}%
+$\displaystyle \frac{d}{dt} \bigg|_I \mathbf{L} = \frac{d}{dt}\bigg|_B \mathbf{L} + \mathbf{\omega}\times \mathbf{L}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2193}%
+$\displaystyle \rightarrow \mathbf{\Gamma}^{(e)} = \mathbf{I}\cdot \frac{\mathbf{\omega}}{dt} + \mathbf{\omega} \times \mathbf{I}' \mathbf{\omega}'$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2194}%
+$\displaystyle \Gamma_1^{(e)} = I_1 \frac{d\omega_1}{dt} + \omega_2 I_3 \omega_3 - \omega_3 I_2 \omega_2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2195}%
+$\displaystyle \Gamma_1^{(e)} = I_1 \dot{\omega_1} + \omega_2 \omega_3 (I_3 - I_2)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2196}%
+$\displaystyle \boxed{I_i \dot{\omega_i} = \omega_j \omega_k (I_j - I_k) + \Gamma_i^{(e)} }$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2198}%
+$ \Gamma$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2200}%
+$ \hat{z}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2202}%
+$ \alpha$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2204}%
+$ y \neq y'$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2206}%
+$ \hat{y}'$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2208}%
+$ \beta$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2210}%
+$ \hat{z}'$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2212}%
+$ \gamma$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2213}%
+$\displaystyle \boxed{\omega_1 = -\dot{\alpha} \sin{\beta} \cos{\gamma} + \dot{\beta} \cos{\gamma} }$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2214}%
+$\displaystyle \boxed{\omega_2 = \dot{\alpha} \sin{\beta} \sin{\gamma} + \dot{\beta} \cos{\gamma} }$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2215}%
+$\displaystyle \boxed{\omega_3 = \dot{\alpha} \cos{\beta} + \dot{\gamma}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2217}%
+$ \dot{\alpha} \cos{\beta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2219}%
+$ \dot{\beta}\cos{\alpha}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2220}%
+$\displaystyle \frac{d\sigma}{d\Omega} = \frac{b}{\sin{\theta}} \left|\frac{db}{d\theta}\right|$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2221}%
+$\displaystyle d\sigma = 2\pi b db$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2222}%
+$\displaystyle d\Omega = 2 \pi \sin{\theta} d\theta$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2223}%
+$\displaystyle \textbf{TODO: DIAGRAM}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2224}%
+$\displaystyle \mathcal{L}_{g} = -\rho(\mathbf{x},t)\phi(\mathbf{x},t) - \frac{1}{8\pi G}(\nabla\mathbf{\phi}(\mathbf{x},t))^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2225}%
+$\displaystyle \rightarrow -\rho = \frac{2}{8\pi G} \nabla^2{\phi}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2226}%
+$\displaystyle \boxed{\nabla^2\phi = 4\pi G \rho}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2227}%
+$\displaystyle \boxed{\mathbf{g} = -\nabla\mathbf{\phi}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2228}%
+$\displaystyle \nabla\cdot\mathbf{\mathbf{g}} = -4\pi G \rho$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2229}%
+$\displaystyle \oint \nabla\cdot\mathbf{\mathbf{g}} dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2230}%
+$\displaystyle =  \oint \mathbf{g} \cdot d\mathbf{\sigma} = -4\pi G M$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2231}%
+$\displaystyle p^{\mu} = \{ E, p^x, p^y, 0 \}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2232}%
+$\displaystyle v_{obs}^{\mu} = \{ \frac{dt}{d\tau}, \frac{dx}{d\tau} \} = \{ \frac{dt}{d\tau}, \gamma v_x \}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2233}%
+$\displaystyle E = p^{\mu}V_{\mu} = \omega \frac{dt}{d\tau} - \omega \cos{\theta}v_x\gamma$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2234}%
+$\displaystyle \omega' = \omega(\gamma - \cos{\theta}\gamma v_x)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2235}%
+$\displaystyle \boxed{ \frac{\omega'}{\omega} = \frac{1 - v\cos{\theta}}{\sqrt{1-v^2}}  }$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2236}%
+$\displaystyle \boxed{ \frac{\omega'}{\omega} = \sqrt{ \frac{1 - v}{1 + v}}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2237}%
+$\displaystyle ds^2 = -\bigg( 1 - \frac{2GM}{r} \bigg) dt^2 + \bigg(1 + \frac{2GM}{r} \bigg)^{-1} dr^2 + r^2 d\Omega^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2238}%
+$\displaystyle ds^2 = -dt^2 + \frac{dr^2}{1-kr^2} + r^2 d\Omega^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2240}%
+$ \rightarrow$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2242}%
+$ r=\sinh{\theta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2248}%
+$ r=\sin{\theta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2250}%
+$\displaystyle w = \frac{1}{2} \int_v \rho(x) \Phi(x) d^3x,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2251}%
+$\displaystyle \mathbf{F} = \int \frac{\sigma^2}{2\epsilon_0} d\mathbf{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2252}%
+$\displaystyle \mathbf{s} = \frac{1}{\mu_0}\big(\mathbf{E}\times\mathbf{B}\big)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2253}%
+$\displaystyle \frac{\partial u}{\partial t} = - \nabla \cdot \mathbf{s}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2254}%
+$\displaystyle \partial_{\mu}s^{\mu} = 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2255}%
+$\displaystyle \partial_{\mu} J^{\mu} = 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2256}%
+$\displaystyle \mathbf{\mathcal{P}}_{em} = \frac{1}{c^2} \mathbf{s}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2257}%
+$\displaystyle (\nabla^2 + k^2) \psi = -\delta(r-r_0)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2258}%
+$\displaystyle \int dV [ \psi (\nabla^2 + k^2) \phi - \phi (\nabla^2 + k^2) \psi ]$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2259}%
+$\displaystyle \int d\mathbf{s} \cdot(\psi \nabla\phi - \phi \nabla \psi)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2260}%
+$\displaystyle \mathbf{J} = qN \mathbf{v}_{drift} = \frac{n\mathbf{I}}{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2261}%
+$\displaystyle \sigma = \frac{J}{\epsilon}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2262}%
+$\displaystyle \sigma = - \epsilon_0 \frac{\partial \phi}{\partial}{\eta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2263}%
+$\displaystyle q' = \frac{-a}{y} q$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2264}%
+$\displaystyle \frac{q'}{y'} = \frac{-q}{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2265}%
+$\displaystyle \Phi = \sum_i \phi_i$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2266}%
+$\displaystyle \textbf{TODO: Image Needed Here}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2267}%
+$\displaystyle \theta = \tan^{-1} n$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2268}%
+$\displaystyle U = -\mathbf{mu} \cdot \mathbf{B}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2269}%
+$\displaystyle U = -\mu \mathbf{\sigma} \cdot \mathbf{B}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2270}%
+$\displaystyle \sigma$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2271}%
+$\displaystyle \mathbf{F}_m = \int dq (\mathbf{v} \times \mathbf{B}) = \int d \mathbf{l }\lambda (\mathbf{v}\times\mathbf{B})$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2272}%
+$\displaystyle \lambda \mathbf{V} = \mathbf{I};$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2273}%
+$\displaystyle \boxed{\int (\mathbf{I}\times\mathbf{B})\cdot d\mathbf{l} = \mathbf{L} }$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2274}%
+$\displaystyle \boxed{\mathbf{F} = \int (\mathbf{J} \times \mathbf{B}) d \tau}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2275}%
+$\displaystyle \psi(r') = \frac{- i k}{2\pi} \frac{e^{ik(r_0 + r')}}{r_0r'}\int_{\sigma}dxdy e^{i\mathbf{q}\cdot\mathbf{x}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2276}%
+$\displaystyle I = \left|\psi(r')\right|^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2278}%
+$\displaystyle \sim \frac{e^{ikr}}{r^2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2279}%
+$\displaystyle \nabla \times \mathbf{E} = \frac{\partial^2\mathbf{B}}{\partial t^2} \cdot d\mathbf{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2280}%
+$\displaystyle \oint \nabla \times \mathbf{E} \cdot d\mathbf{a} = - \int \frac{\partial^2\mathbf{B}}{\partial t^2}\cdot d\mathbf{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2281}%
+$\displaystyle \oint \mathbf{E} \cdot d\mathbf{l} = - \frac{d}{dt} \iint \mathbf{B} \cot d\mathbf{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2282}%
+$\displaystyle \mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4\pi} \int \frac{\mathbf{I} \times \hat{r} }{r^2} dl'$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2283}%
+$\displaystyle = \frac{\mu_0}{4\pi} I \int \frac{d\mathbf{l}\times \hat{r}}{r^2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2284}%
+$\displaystyle \mathbf{P} = \int r' \rho(r')d\tau' = \sum_{i=1} q_i\mathbf{r}_i'$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2285}%
+$\displaystyle V_{dipole}(r) = \frac{1}{4\pi\epsilon_0}\frac{\mathbf{P}\cdot\hat{r}}{r^2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2286}%
+$\displaystyle \mathbf{P} = \mathcal{N}<\mathbf{P}>$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2287}%
+$\displaystyle \mathbf{E}_{dip}(\mathbf{r}) = \frac{1}{4\pi\epsilon_0r^3}\big[3(\mathbf{p}\cdot\hat{r})\hat{r} - \mathbf{p}\big]$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2288}%
+$\displaystyle \sigma_b = \mathbf{p}\dot\hat{n}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2289}%
+$\displaystyle \rho_b = -\nabla\cdot\mathbf{p}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2290}%
+$\displaystyle \rho_T=\nabla\cdot(\epsilon_0\mathbf{E}-\mathbf{P})$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2291}%
+$\displaystyle \epsilon_0 \mathbf{E}-\mathbf{P}=\mathbf{D}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2292}%
+$\displaystyle \nabla\times\mathbf{B} = \mu_0 \mathbf{J} + \frac{1}{c^2}\frac{\partial^2\mathbf{E}}{\partial t^2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2293}%
+$\displaystyle \iint \nabla\times\mathbf{B} \cdot d\mathbf{a} = \mu_0 \iint \mathbf{J}\cdot d\mathbf{a} + \frac{1}{c^2} \frac{d}{dt}\iint \mathbf{E}\cdot d\mathbf{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2294}%
+$\displaystyle \oint \mathbf{B}\cdot d\mathbf{l} = \mu_0 \iint \mathbf{J} \cdot d\mathbf{a} + \frac{1}{c^2} \frac{d}{dt} \iint \mathbf{E} \cdot d\mathbf{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2296}%
+$ \propto$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2297}%
+$\displaystyle \frac{Q}{\epsilon_0} = \oiint \mathbf{E} \cdot d \mathbf{a} = \iiint \nabla\cdot\mathbf{E}\cdot d\mathbf{V}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2298}%
+$\displaystyle \nabla\cdot\mathbf{E} = \frac{\rho}{\epsilon_0}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2302}%
+$ \mathbf{A} = \frac{\mu_0}{4\pi}\frac{\mathbf{m}\times\mathbf{r}}{r^3} $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2304}%
+$ \mathbf{B}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2306}%
+$ \mathbf{B} = \frac{\mu_0}{4\pi}\bigg(\frac{3\mathbf{r}(\mathbf{m}\cdot\mathbf{r})}{r^5} - \frac{\mathbf{m}}{r^3}\bigg) = \frac{\mu_0}{4\pi}\frac{1}{r^3}(3(\mathbf{m}\cdot\hat{r})\hat{r} - \mathbf{m}) $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2308}%
+$ \mathbf{m}\times\mathbf{B} = \mathbf{\Gamma}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2310}%
+$ \mathbf{F} = \nabla(\mathbf{m}\cdot\mathbf{B})$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2312}%
+$ \mathbf{m} = I\int d\mathbf{a} = I \mathbf{a}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2314}%
+$ \mathbf{M} = \mathcal{N}\mathbf{m}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2316}%
+$ \mathbf{B} = \mu_0(\mathbf{H} + \mathbf{M})$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2317}%
+$\displaystyle T_{ij} = \epsilon_0\big[E_iE_j - \frac{1}{2}\delta_{ij}E^2 \big] +$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2318}%
+$\displaystyle \frac{1}{\mu_0}\big[B_iB_j - \frac{1}{2} \delta{ij}B^2 \big]$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2319}%
+$\displaystyle \frac{\partial^2\mathbf{\mathcal{P}}_{mech}+\mathbf{\mathcal{P}}_{em}}{\partial t^2} = \nabla\cdot\mathbf{T}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2320}%
+$\displaystyle \mathbf{\mathcal{P}}_{em} = \mu_0\epsilon_0 \mathbf{s}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2321}%
+$\displaystyle dV = \frac{dq}{C} \rightarrow qdV = dU = \frac{qdq}{C}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2322}%
+$\displaystyle U = \frac{q^2}{2C} = \frac{1}{2} vq = \boxed{\frac{1}{2} cv^2 = U}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2323}%
+$\displaystyle (V=L\dot{I})I;$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2324}%
+$\displaystyle IV = IL\dot{I}=P$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2325}%
+$\displaystyle P = LI\frac{dI}{dt}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2326}%
+$\displaystyle \int dPdE = \int L I dI$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2327}%
+$\displaystyle \boxed{U=\frac{1}{2} L I^2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2328}%
+$\displaystyle w = \frac{\epsilon_0}{2} \epsilon_r E^2 d\tau = \frac{1}{2}\int \mathbf{D}\mathbf{E}d\tau$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2329}%
+$\displaystyle w = \frac{1}{2\mu_0} \int \mathbf{H}\mathbf{B}d\tau$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2330}%
+$\displaystyle u_{em} = \frac{1}{2} (\mathbf{E}\cdot\mathbf{D} + \mathbf{B}\cdot\mathbf{H})$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2332}%
+$ \textbf{Electric and Magnetic field relations:}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2333}%
+$\displaystyle \mathbf{k}\times\mathbf{E} = \mu \omega \mathbf{H}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2334}%
+$\displaystyle \mathbf{k}\times\mathbf{H} = -\epsilon \omega \mathbf{E}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2335}%
+$\displaystyle \mathbf{k} \cdot \mathbf{E} = 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2336}%
+$\displaystyle \mathbf{k} \cdot \mathbf{H} = 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2337}%
+$\displaystyle \mathbf{B} = \mp \frac{i\mathbf{E}}{c}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2338}%
+$\displaystyle E_1 = Ecos\theta$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2339}%
+$\displaystyle I_1 = Icos^2\theta$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2340}%
+$\displaystyle \mathbf{k}\cdot \mathbf{r} = \mathbf{k''} \cdot \mathbf{r}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2342}%
+$\displaystyle H^{\dagger} = (H^{*})^{-1} = H$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2343}%
+$\displaystyle U^{-1}U = UU^{-1} = \mathbb{1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2344}%
+$\displaystyle O^{\dagger}O = \mathbb{1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2346}%
+$\displaystyle \begin{bmatrix}
+    a & b\\
+    c & d
+\end{bmatrix}^{-1}
+= \frac{1}{det}
+\begin{bmatrix}
+    d & -b\\
+    -c & a
+\end{bmatrix}
+$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2347}%
+$\displaystyle \sigma_x = \begin{bmatrix}
+0 & 1\\
+1 & 0
+\end{bmatrix}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2348}%
+$\displaystyle \sigma_y = \begin{bmatrix}
+0 & -i\\
+i & 0
+\end{bmatrix}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2349}%
+$\displaystyle \sigma_z = \begin{bmatrix}
+1 & 0\\
+0 & -1
+\end{bmatrix}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2350}%
+$\displaystyle \mathbb{1} = \delta_{ij}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2351}%
+$\displaystyle \sigma_i\sigma_j = i\sigma_k$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2352}%
+$\displaystyle \sigma_i^2 = \mathbb{1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2353}%
+$\displaystyle \mathbf{\sigma} = \sigma_x\hat{x} + \sigma_y\hat{y} + \sigma_z \hat{z}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2354}%
+$\displaystyle \rho = \sum_i w_i \left|a^i\right\rangle \left\langle a^i\right|$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2355}%
+$\displaystyle Tr(\rho)=1$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2356}%
+$\displaystyle Tr(\rho A) = \langle A\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2357}%
+$\displaystyle \rho$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2358}%
+$\displaystyle (\rho^2 = \rho)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2359}%
+$\displaystyle a^{\pm} = \big(\frac{m\omega}{2\hbar}\big)^{1/2} x \mp i \big(\frac{1}{2\hbar\omega m}\big)^{1/2} p$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2360}%
+$\displaystyle x = c_1 (a + a^{\dagger}); p = c_2 (a - a^{\dagger} )$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2361}%
+$\displaystyle a \left|n\right\rangle  = \sqrt{n}\left|n-1\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2362}%
+$\displaystyle a^{\dagger}\left|n\right\rangle  = \sqrt{n+1} \left|n+1\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2363}%
+$\displaystyle a^{\dagger}a\left|n\right\rangle  = n\left|n\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2364}%
+$\displaystyle \mathcal{Z} = \sum^{\infty}_{n=0}(e^{\mu\beta} e^{-E\beta})^N$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2365}%
+$\displaystyle \rightarrow \boxed{\frac{1}{1 - e^{(E - \mu)\beta}} = \mathcal{Z}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2366}%
+$\displaystyle n = \frac{1}{\beta}\frac{\partial^2ln(\mathcal{Z})}{\partial\mu^2} \rightarrow$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2367}%
+$\displaystyle \langle n\rangle  = \big[\exp{(E-\mu)\beta} - 1\big]^{-1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2368}%
+$\displaystyle \mathcal{Z} = e^{0\mu \beta- 0\beta} + e^{\mu \beta - \epsilon \beta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2369}%
+$\displaystyle = 1 + e^{(\mu - \epsilon) \beta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2370}%
+$\displaystyle N = kT\frac{\partial}{\partial \mu}ln\mathcal{Z}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2371}%
+$\displaystyle \boxed{= \frac{1}{e^{(\epsilon - \mu})\beta}+1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2372}%
+$\displaystyle [J_i,J_j] = i\hbar \epsilon_{ijk}J_k$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2373}%
+$\displaystyle [\mathbf{J}^2,J_k] = 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2374}%
+$\displaystyle J_{\pm} = J_x \pm iJ_y
+[J_+,J_-] = 2\hbar J_z$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2375}%
+$\displaystyle [J_z,J_{\pm}]=\pm\hbar J_{\pm}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2376}%
+$\displaystyle J^2\left|j,m\right\rangle  = j(j+1)\hbar^2\left|j,m\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2377}%
+$\displaystyle J_z\left|j,m\right\rangle  = m\hbar\left|j,m\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2378}%
+$\displaystyle J_{\pm} \left|j,m\right\rangle  = \sqrt{(j\mp m)(j \pm m + 1)}\hbar \left|j, m\pm 1\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2379}%
+$\displaystyle H_0 + H', E = E_0 + \lambda E_1 + \lambda^2 E_2...$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2380}%
+$\displaystyle \left|\psi\right\rangle  = \left|n_0\right\rangle  + \lambda \left|n_1\right\rangle  + \lambda^2 \left|n_2\right\rangle ...$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2381}%
+$\displaystyle E_1 = \left\langle n_0\right| H' \left|n_0\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2382}%
+$\displaystyle \left|n_1\right\rangle  = \sum_{m=1_, m\neq n}^{\infty} \frac{\left\langle n_0\right|H'\left|n_0\right\rangle }{E_n^{(0)}-E_m^{(0)}}\left|m_0\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2383}%
+$\displaystyle E2 =\sum_{m=1_, m\neq n}^{\infty} \frac{\left|\left\langle m_0\right|H'\left|n_0\right\rangle \right|^2}{E_n^{(0)}-E_m^{(0)}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2384}%
+$\displaystyle \left|\psi^+\right\rangle  = \left|i\right\rangle  + \frac{1}{E_i - H_0 + i \hbar  \epsilon}V\left|\psi^+\right\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2385}%
+$\displaystyle \psi^{\pm}(\mathbf{x},t) = \phi^{\pm}(\mathbf{x},t) - \frac{m}{2\pi\hbar^2}\int_{\infty}^{\infty}d\mathbf{x'}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2386}%
+$\displaystyle \times \frac{e^{ \pm i k \left|\mathbf{x}-\mathbf{x'}\right|}}{\left|\mathbf{x}-\mathbf{x'}\right|}V(\mathbf{x'}\psi^{\pm}(\mathbf{x'},t)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2388}%
+$ \left|\mathbf{x}-\mathbf{x'}\right|\rightarrow r$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2390}%
+$ r$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2391}%
+$\displaystyle f^{(1)}(k,k') = \frac{-m}{\hbar^2 2 \pi}\int_{\infty}^{\infty}e^{i(\mathbf{k}-\mathbf{k'})\cdot\mathbf{r}} V(\mathbf{r})d^3\mathbf{r}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2392}%
+$\displaystyle f^{(1)}(\theta) = \frac{-2m}{\hbar^2q} \int_0^{\infty} r dr V(r) sin(qr)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2393}%
+$\displaystyle \frac{d\sigma}{d\Omega} = \left|(f^{(1)}(\theta)\right|^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2394}%
+$\displaystyle w_{ij} = \frac{2\pi}{\hbar}\left|\left\langle\psi_f\right|V\left|\psi_i\right\rangle \right|^2 \rho(E_i)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2395}%
+$\displaystyle E = \frac{\left\langle\alpha\right|H\left|\alpha\right\rangle }{\langle\alpha|\alpha\rangle }$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2396}%
+$\displaystyle \alpha$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2397}%
+$\displaystyle \frac{dE}{d\alpha} = 0\iff E = E_0;$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2399}%
+$\displaystyle \dot{c}_m(t) = -c_m(t)\left\langle m;t\right|\big[\frac{\partial}{\partial t} \left|m;t\right\rangle \big]$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2400}%
+$\displaystyle - \sum_n c_n(t) e^{i(\theta_n-\theta_m)} \frac{\left\langle m;t\right|H\left|n;t\right\rangle }{E_n-E_m}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2401}%
+$\displaystyle i\frac{\partial}{\partial s} U(t,t_0) = \frac{H}{\hbar/T}U(t,t_0)=\frac{H}{\hbar\Omega} U(t,t_0)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2402}%
+$\displaystyle T\rightarrow 0, \hbar\Omega>>H$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2403}%
+$\displaystyle U(t,t_0)\rightarrow 1$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2404}%
+$\displaystyle T\rightarrow 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2406}%
+$ \left|\psi(t)\right\rangle _s$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2408}%
+$ e^{iHt} \left|\psi\right\rangle _s = \left|\psi\right\rangle _H$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2410}%
+$ U^{\dagger}AU = A_H$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2412}%
+$ U^{\dagger}AU$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2414}%
+$ \left|\psi\right\rangle _I = e^{iH_0t}\left|\psi(t)\right\rangle _s$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2416}%
+$ e^{iH_0t} A e^{-iH_0 t} = A_I$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2418}%
+$ V_I$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2448}%
+$ +\mu N$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2449}%
+$\displaystyle P = \frac{1}{\mathcal{Z}}e^{-E\beta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2450}%
+$\displaystyle e^{-F\beta} = \int \frac{1}{h^n c}e^{-E\beta} dp_1...dq_n = \sum_i e^{-E_i\beta} = \mathcal{Z}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2452}%
+$ \Omega$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2454}%
+$\displaystyle S = k\ln{\Omega} $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2455}%
+$\displaystyle \boxed{\text{fugacity } f = e^{\mu \beta}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2456}%
+$\displaystyle \boxed{\mathcal{Z} = \sum_i f_i e^{-\epsilon_i\beta}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2458}%
+$ =\frac{1}{2}kT$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2459}%
+$\displaystyle U_{thermal} = N\cdot f \cdot \frac{1}{2} kT$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2460}%
+$\displaystyle \frac{1}{2}mv_i^2, \frac{1}{2}I\omega_i^2, \frac{1}{2}k_sx^2,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2461}%
+$\displaystyle .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2463}%
+$\displaystyle \Delta S = \int \frac{dQ}{T}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2464}%
+$\displaystyle S = \beta(\langle E\rangle -\langle F\rangle )$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2465}%
+$\displaystyle S = -\sum_i \mathcal{P}_i\ln\mathcal{P}_i$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2466}%
+$\displaystyle S = -k Tr(\rho \ln\rho)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2467}%
+$\displaystyle \langle(\Delta E)^2\rangle  = \frac{\partial^2\ln \mathcal{Z}}{\partial\beta^2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2468}%
+$\displaystyle C_v = \frac{\partial\langle E\rangle }{\partial T} = \frac{\beta}{T}\langle(\Delta E )^2\rangle$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2469}%
+$\displaystyle \mathcal{Z} = \sum_n e^{-\beta \hbar \omega n} = \frac{1}{1 - e^{-\beta \hbar \omega}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2470}%
+$\displaystyle d^3n = \frac{V}{h^3} \int d^3p = \frac{4\pi V}{h^3}\hbar^3 \int k^2 dk$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2471}%
+$\displaystyle (p=\hbar k, \omega=ck)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2472}%
+$\displaystyle \hbar = c = 1$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2473}%
+$\displaystyle u = -\frac{\partial\ln{\mathcal{Z}}}{\partial\beta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2474}%
+$\displaystyle \rightarrow U = (2) \frac{4\pi V}{(2\pi)^3}\int \frac{\omega k^2}{1 - e^{-\beta\omega}}dke^{-\beta\omega}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2475}%
+$\displaystyle \frac{U}{V} = \frac{8\pi}{(2\pi)^3}\int \frac{k^3dk}{1-e^{-\beta k}}e^{-\beta k}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2476}%
+$\displaystyle \beta k = x, \beta dk = dx;$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2477}%
+$\displaystyle \int \frac{x^3dx}{e^x - 1} = ...$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2478}%
+$\displaystyle \boxed{\frac{U}{V} = \frac{8\pi}{(2\pi)^3}(kT)^4\int\frac{x^3dx}{e^x-1}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2479}%
+$\displaystyle \boxed{ = \frac{\pi^2(kT)^4}{15\hbar^3 c^3} \equiv \sigma T^4}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2480}%
+$\displaystyle f = e^{\mu\beta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2481}%
+$\displaystyle \mathcal{Z}=\sum_{N=0}^{\infty} \Omega \big[ f e^{- \beta E} \big]^N$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2482}%
+$\displaystyle \boxed{\langle n\rangle  = \frac{1}{\beta} \frac{\partial\ln{\mathcal{Z}}}{\partial\mu}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2484}%
+$\displaystyle dU = TdS - pdV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2485}%
+$\displaystyle ddU = 0 = dT \wedge dS - dp \wedge dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2486}%
+$\displaystyle \boxed{dT \wedge dS = dp \wedge dV}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2487}%
+$\displaystyle dT = \frac{\partial T}{\partial S}dV \wedge dS + \frac{\partial T}{\partial V} dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2488}%
+$\displaystyle \frac{\partial T}{\partial V}dV \wedge dS = \frac{\partial p}{\partial S} dS \wedge dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2489}%
+$\displaystyle \rightarrow \boxed{\frac{\partial T}{\partial V} = - \frac{\partial p}{\partial S}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2490}%
+$\displaystyle \mathcal{Z} = \frac{V}{h^3} \int d^3 p \bigg[e^{-\beta p^2/2m} \bigg] = \frac{V}{h^3}\sqrt{\frac{2\pi m}{\beta}}^3$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2491}%
+$\displaystyle \mathcal{Z} = \frac{V^N}{h^{3N}}\bigg(\frac{2\pi m}{\beta}\bigg)^{3N/2} = V^N\bigg( \frac{2 \pi m}{h^2 \beta} \bigg)^{3N/2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2492}%
+$\displaystyle \mathcal{Z} = \frac{V^N}{\lambda_{th}^{3N}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2493}%
+$\displaystyle A = -kT \ln{\mathcal{Z}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2494}%
+$\displaystyle S = -\frac{\partial A}{\partial T}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2496}%
+$ C_p$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2498}%
+$ C_v$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2500}%
+$ \alpha_p$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2502}%
+$ k_T$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2504}%
+$ k_T = - \frac{1}{V} \big( \frac{\partial V}{\partial P} \big)_T$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2506}%
+$ \alpha_P = - \frac{1}{V} \big( \frac{\partial V}{\partial T} \big)_P$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2508}%
+$ C_P = - T \big( \frac{\partial S}{\partial T} \big)_P$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2510}%
+$ C_V = - T \big( \frac{\partial S}{\partial T} \big)_V$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2519}%
+$\displaystyle C_v = C_p - \frac{v\alpha^2_p}{k_T}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2520}%
+$\displaystyle k_T = -\frac{1}{v}\frac{\partial v}{\partial p}\big|_p$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2521}%
+$\displaystyle \alpha_p = -\frac{1}{v}\frac{\partial v}{\partial T}\big|_p$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2522}%
+$\displaystyle \nonumber$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2523}%
+$\displaystyle dW = -P dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2524}%
+$\displaystyle W = - \int_{v_i}^{v_f} P dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2525}%
+$\displaystyle = - \int_{v_i}^{v_f} \frac{NT}{V}dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2526}%
+$\displaystyle \boxed{W = NT \ln{\frac{v_i}{v_f}}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2527}%
+$\displaystyle U = \frac{f}{2}NT \rightarrow dU = \frac{f}{2} NdT$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2528}%
+$\displaystyle \frac{f}{2} N dT = - P dV \rightarrow \frac{f}{2}N dT = -\frac{NT}{V}dV$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2529}%
+$\displaystyle \frac{f}{2}\frac{dT}{T} = - \frac{dV}{V} \rightarrow VT^{f/2}=V_0T_0^{f/2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2530}%
+$\displaystyle \boxed{ P V^{\gamma} = \text{ const; } \gamma = \frac{f+2}{f}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2533}%
+$ \mathbb{1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2535}%
+$ \mathbb{1}=A(\forall A \in G)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2537}%
+$ \in$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2539}%
+$ A^{-1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2541}%
+$ AA^{-1}=A^{-1}A=\mathbb{1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2542}%
+$\displaystyle \nu\neq 0; R = a\rho^{\nu} + b \rho^{-\nu}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2543}%
+$\displaystyle \psi = A \cos{\nu\phi} + B \sin{\nu \phi}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2544}%
+$\displaystyle \nu=0; R=a_0 + b_0 \ln{\rho}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2545}%
+$\displaystyle \psi = A_0 + B_0\phi$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2546}%
+$\displaystyle \frac{\rho}{R}\frac{\partial}{\partial \rho}\big(\rho\frac{\partial R}{\partial \rho}\big) = \nu^2$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2547}%
+$\displaystyle \frac{1}{\psi}\frac{\partial^2\psi}{\partial\phi^2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2548}%
+$\displaystyle \nabla^2 \Phi = 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2550}%
+$\displaystyle \Phi = \sum_{l,m}Y^m_l(\Omega)\bigg[A_lr^l + \frac{B_l}{r^{l+1}}\bigg]$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2551}%
+$\displaystyle = \sum_{l,m} P_l(\cos{\theta})e^{im\phi}\bigg[A_lr^l + \frac{B_l}{r^{l+1}}\bigg]$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2552}%
+$\displaystyle P_0(\cos{\theta}) = 1$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2553}%
+$\displaystyle P_1(\cos{\theta}) = \cos{\theta}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2554}%
+$\displaystyle P_2(\cos{\theta}) = \frac{1}{2}\big(3 \cos^2{\theta} - 1 \big)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2555}%
+$\displaystyle \int_{-1}^1 P_m(x) P_n(x) dx = \frac{2}{2n+1}\delta_{mn}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2556}%
+$\displaystyle \boxed{\int_{-\infty}^{\infty}e^{-x^2}dx = \sqrt{\pi}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2557}%
+$\displaystyle \int_{-\infty}^{\infty}e^{-x^2}dx  \int_{-\infty}^{\infty}e^{-y^2}dy = \int_{-\infty}^{\infty}e^{-(x^2+y^2)}dxdy$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2558}%
+$\displaystyle = \int_0^{\infty} dr \int_0^{2\pi}rd\theta e^{-r^2}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2559}%
+$\displaystyle u = r^2, du = 2rdr$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2560}%
+$\displaystyle \boxed{\int_{\infty}^{\infty} e^{-\alpha x^2} dx = \sqrt{\frac{\pi}{\alpha}}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2562}%
+$ x\rightarrow \sqrt{\alpha}x',dx=\sqrt{\alpha}dx'$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2563}%
+$\displaystyle \boxed{\int_{-\infty}^{\infty}x^2 e^{-\alpha x^2}dx = \frac{\sqrt{\pi}}{2a^{3/2}}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2564}%
+$\displaystyle \int_{-\infty}^{\infty}x^2 e^{-\alpha x^2}dx$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2565}%
+$\displaystyle = - \int_{-\infty}^{\infty} \frac{d}{d\alpha} e^{-\alpha x^2} dx$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2566}%
+$\displaystyle =  -  \frac{d}{d\alpha}\int_{-\infty}^{\infty} e^{-\alpha x^2} dx$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2567}%
+$\displaystyle = - \frac{d}{d\alpha} \sqrt{\frac{\pi}{\alpha}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2568}%
+$\displaystyle \boxed{\int_{-\infty}^{\infty}dx e^{-\frac{a}{2}x^2 + Jx} = \sqrt{\frac{2\pi}{\alpha}}e^{J^2/2\alpha} }$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2569}%
+$\displaystyle \int_{-\infty}^{\infty}dx e^{- \frac{\alpha}{2} + Jx}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2570}%
+$\displaystyle -\frac{\alpha}{2}x^2 + Jx = -\frac{\alpha}{2}\bigg(x^2 - \frac{2Jx}{\alpha}\bigg)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2571}%
+$\displaystyle = -\frac{\alpha}{2}\bigg(x - \frac{J}{\alpha}\bigg)^2 + \frac{J^2}{2\alpha}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2572}%
+$\displaystyle \rightarrow \int_{-\infty}^{\infty}e^{-\frac{\alpha}{2}(x-\frac{J}{\alpha})^2} dx e^{J^2/2\alpha}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2573}%
+$\displaystyle u = x-\frac{J}{\alpha}, du=dx$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2574}%
+$\displaystyle \boxed{ \int_{-\infty}^{\infty}dx e^{- \frac{\alpha}{2} + iJx}= \sqrt{\frac{2\pi}{\alpha}}e^{-J^2/2\alpha}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2576}%
+$ J\rightarrow iJ$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay2577}%
+$\displaystyle \boxed{ \int_{-\infty}^{\infty}dx e^{i\frac{\alpha}{2} + iJx}= \sqrt{\frac{2\pi i}{\alpha}}e^{-J^2/2\alpha}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2579}%
+$ \alpha \rightarrow -i\alpha$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+
+\end{document}
