@@ -8,33 +8,37 @@
 -->
 <SCRIPT LANGUAGE="JavaScript">
 
-        function greeting()
-        {
-           document.writeln("<FONT SIZE=-1>");
-           var today = new Date();
-           var hrs = today.getHours();
-           var mins = today.getMinutes();
-           var secs = today.getSeconds();
-           document.writeln("<CENTER>");
-           document.write("Good ");
-           if (hrs < 6)
-              document.write("(Early) Morning!");
-           else if (hrs < 12)
-              document.write("Morning!");
-           else if (hrs <= 16)
-              document.write("Afternoon!");
-           else
-              document.write("Evening!");
+ function greeting()
+ {
+     document.writeln("<FONT SIZE=-1>");
+     var current_time = new Date();
+     // var hrs = current_time.getHours();
+     var hrs = ('0'+current_date.getHours()).slice(-2);
+     // var mins = current_time.getMinutes();
+     var mins = ('0'+current_date.getMinutes()).slice(-2);
+     //var secs = current_time.getSeconds();
+     var secs = ('0'+current_date.getSeconds()).slice(-2);
 
-           document.write("<br>")
-           document.write("You visited at")
-           document.write("<br>")
-           document.write(hrs,":",mins,":",secs)
-           document.write("<br>")
-           document.write("</font>")
-           document.write("</CENTER>")
-        }
-        </script>
+     document.writeln("<CENTER>");
+     document.write("Good ");
+     if (hrs < 6)
+         document.write("(Early) Morning!");
+     else if (hrs < 12)
+         document.write("Morning!");
+     else if (hrs <= 16)
+         document.write("Afternoon!");
+     else
+         document.write("Evening!");
+
+     document.write("<br>")
+     document.write("You visited at")
+     document.write("<br>")
+     document.write(hrs,":",mins,":",secs)
+     document.write("<br>")
+     document.write("</font>")
+     document.write("</CENTER>")
+ }
+</script>
 
 
 <html>
