@@ -1,0 +1,53 @@
+<!--
+.%%%%%...%%..%%...%%%%...%%..%%...........%%%%....%%%%..
+.%%..%%...%%%%...%%..%%..%%%.%%..........%%..%%..%%..%%.
+.%%%%%.....%%....%%%%%%..%%.%%%..........%%%%%%..%%.....
+.%%..%%....%%....%%..%%..%%..%%..........%%..%%..%%..%%.
+.%%..%%....%%....%%..%%..%%..%%..........%%..%%...%%%%..
+........................................................
+-->
+
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title><!--Title goes here--></title>
+    <link rel="stylesheet" href="resources/css/style.css"> <!--CSS-->
+  </head>
+
+  <body class="main" TEXT="#FFFFFF" VLINK="#00FFFF" BGCOLOR="#000000"
+	BACKGROUND="./img/bgs/bgpurplecotton.gif"> <!--CSS-->
+  </body>
+
+</html>
+<!--  <script>
+     function animateTitle() {
+     i >= message.length - 1 ? (i = 0) : i++,
+     (document.title = message[i]),
+     setTimeout("animateTitle()", 100);
+     }
+     var message = [
+     "[ ][ ][ ][ ][ ][ ][R]",
+     "[ ][ ][ ][ ][ ][R][Y]",
+     "[ ][ ][ ][ ][R][Y][A]",
+     "[ ][ ][ ][R][Y][A][N]",
+     "[ ][ ][R][Y][A][N][']",
+     "[ ][R][Y][A][N]['][S]",
+     "[R][Y][A][N]['][S][ ]",
+     "[Y][A][N]['][S][ ][S]",
+     "[A][N]['][S][ ][S][I]",
+     "[N]['][S][ ][S][I][T]",
+     "['][S][ ][S][I][T][E]",
+     "[S][ ][S][I][T][E][ ]",
+     "[ ][S][I][T][E][ ][ ]",
+     "[S][I][T][E][ ][ ][ ]",
+     "[I][T][E][ ][ ][ ][ ]",
+     "[T][E][ ][ ][ ][ ][ ]",
+     "[E][ ][ ][ ][ ][ ][ ]",
+     "[ ][ ][ ][ ][ ][ ][ ]"
+     ],
+     i = 0;
+     animateTitle();
+     </script>
+-->
+
