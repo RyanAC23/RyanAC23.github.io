@@ -1,8 +1,0 @@
-#+TITLE: Home
-#+INCLUDE: "./html_export_common.org"
-
-
-[[resources/images/atoll.jpg]]
-
-<center>Welcome to the best destination on the World Wide Web!!!</center>
-<center>Winner of the "Best Dang Webring" award 1996</center>

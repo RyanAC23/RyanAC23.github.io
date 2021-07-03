@@ -1,6 +1,6 @@
 #+Title: Ubuntu Mate Setup
 #+Subtitle: [2020-12-04 Fri]
-#+INCLUDE: "./html_export_common.org"
+#+INCLUDE: "../html_export_common.org"
 #+INDEX: Ubuntu Mate Setup
 #+OPTIONS: num:nil
 

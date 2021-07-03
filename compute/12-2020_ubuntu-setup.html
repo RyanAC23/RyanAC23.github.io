@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-07-03 Sat 12:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ubuntu Mate Setup</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Ryan" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<body class="main" TEXT="#FFFFFF" VLINK="#00FFFF" BGCOLOR="#000000" BACKGROUND="../resources/images/bgs/bgpurplecotton.gif">
+<link rel="stylesheet" href="../resources/css/style.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Ubuntu Mate Setup
+<br />
+<span class="subtitle"><span class="timestamp-wrapper"><span class="timestamp">[2020-12-04 Fri]</span></span></span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd51323e">Step 1: Install Ubuntu Mate</a></li>
+<li><a href="#org7a4d91d">Step 2: Set up ssh / git</a>
+<ul>
+<li><a href="#orgdf47485">Installed in this section:</a></li>
+</ul>
+</li>
+<li><a href="#org0913d19">Step 3: Install Packages</a>
+<ul>
+<li><a href="#org603faeb">Change git and hg default editor</a></li>
+<li><a href="#org650966b">Manually get Chrome</a></li>
+</ul>
+</li>
+<li><a href="#orgd2d575e">Step 4: Sync configuration files</a></li>
+<li><a href="#org962b836">Extra: Old Notes</a>
+<ul>
+<li><a href="#org20f715c">Nvidia screen tearing fix</a></li>
+<li><a href="#org4af2eca">Vim-Live-Latex-Preview</a></li>
+<li><a href="#orgcbed8e5">Python / Miniconda</a></li>
+</ul>
+</li>
+<li><a href="#org6ef6501">Extra: dpkg results</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd51323e" class="outline-2">
+<h2 id="orgd51323e">Step 1: Install Ubuntu Mate</h2>
+<div class="outline-text-2" id="text-orgd51323e">
+<p>
+Most recently (as of <span class="timestamp-wrapper"><span class="timestamp">[2020-12-04 Fri]</span></span>) I installed Ubuntu Mate 20.04 from a flash drive (DataStick Pro by Centon, 4GB).
+</p>
+<ul class="org-ul">
+<li>From the installer, select <i>minimal install</i>.</li>
+<li>Turn off proprietary extras
+<ul class="org-ul">
+<li>On my hp pavillion HPE desktop, this step was necessary or installation would fail. I'm not sure why but it might not be required in the future. Be aware.</li>
+<li>I keep a partition with some terabyte of data on my desktop; be sure to install the OS to the proper partition, which should be labelled as such in the partition list.</li>
+</ul></li>
+<li>Click <i>Erase disk and install Ubuntu Mate</i></li>
+<li>Choose your timezone and contine.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-sh">&gt; NAME: ryan
+&gt; COMPUTER NAME: ryan-VirtualBox
+&gt; PASSWORD: 0
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Restart to continue.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7a4d91d" class="outline-2">
+<h2 id="org7a4d91d">Step 2: Set up ssh / git</h2>
+<div class="outline-text-2" id="text-org7a4d91d">
+<p>
+You need to set up ssh to clone the repository containing my config files. This can be done by downloading and running the script saved publicly on github:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">&gt; wget https://ryanac23.github.io/linux/files/dclip-setup.sh
+&gt; chmod +700 dclip-setup.sh
+&gt; ./dclip-setup.sh
+</pre>
+</div>
+
+<p>
+This script will run apt to install <code>git</code> and <code>xclip</code>, one of which is necessary to clone the config repository. After setting up ssh in <code>~/.ssh</code> (by default), the contents of <code>id_rsa.pub</code> will be copies to your clipboard by <code>xclip</code>, and the GitHub homepage will open in the default browser, which is most likely <code>Firefox</code>. Sign in and add this ssh key before pressing enter as the script prompts. If done correctly, it will now clone my config files to <code>~/repos/rac_dotfiles</code>. Move to that directory to contine.
+</p>
+
+<ul class="org-ul">
+<li><b>nb</b>) This is a good time to set up your global git settings.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-sh">&gt; git config --global user.email [email]
+&gt; git config --global user.name  [name]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgdf47485" class="outline-3">
+<h3 id="orgdf47485">Installed in this section:</h3>
+<div class="outline-text-3" id="text-orgdf47485">
+<ul class="org-ul">
+<li><code>xclip</code>: Not as essential as it is convenient, this will allow you to auto copy id<sub>rsa.pub</sub> for quick ssh action. The script runs the following command:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-sh">&gt; cat ~/.ssh/id_rsa.pub | xclip -selection c
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>git</code>: You'll need this to get your repos!</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0913d19" class="outline-2">
+<h2 id="org0913d19">Step 3: Install Packages</h2>
+<div class="outline-text-2" id="text-org0913d19">
+<p>
+To install packages with a script, navigate to <code>~/repos/rac_dotfiles/setup_docs</code>. The install script needs to be run as sudo, to loop through packages to install from <code>/rac_dotfiles/packages/*.csv</code>.
+</p>
+<ul class="org-ul">
+<li><b>NB) If you aren't the author running this script on his personal machines, you will need to edit this script first. at the top of the document, change USER=ryan to the name of your account.</b></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-sh">&gt; cd ~/repos/rac_dotfiles/setup_docs/
+&gt; sudo ./packageinstall.sh
+</pre>
+</div>
+
+<p>
+This script does a number of things:
+</p>
+<ol class="org-ol">
+<li>Checks if it's being run as root.</li>
+<li>Asks if you'd like to run <code>sudo apt upgrade</code>, and does so if you confirm.</li>
+<li>Asks if you'd like to run the full package install or only the core. The packages will be discussed in the next section.</li>
+</ol>
+<p>
+3b) If <code>full</code> was selected, the <code>Google-Chrome</code> installer is also downloaded from the internet, and installed. Additionally, Dropbox will be set up. Full takes much longer than core, mostly due to the massive <code>texlive-full</code>, particularly its font files.
+3c) Conda should be installed as well, but I have not added that to these scripts yet.
+</p>
+<ol class="org-ol">
+<li>Asks if you'd like to run <code>apt upgrade</code> and <code>apt autoremove</code>, then ends the script.</li>
+</ol>
+</div>
+
+<div id="outline-container-org603faeb" class="outline-3">
+<h3 id="org603faeb">Change git and hg default editor</h3>
+<div class="outline-text-3" id="text-org603faeb">
+<p>
+Now that git and emacs are installed, you can configure the default editor.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">&gt; git config --global core.editor <span style="color: #6fd3aa;">"emacs -nw -Q</span>
+<span style="color: #6fd3aa;">                -load ~/.emacs.d/light_init.el"</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org650966b" class="outline-3">
+<h3 id="org650966b">Manually get Chrome</h3>
+<div class="outline-text-3" id="text-org650966b">
+<p>
+In case you don't want to use the script but also don't want to use a mouse:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">&gt; wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+&gt; sudo dpkg -i google-chrome-stable_current_amd64.deb
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd2d575e" class="outline-2">
+<h2 id="orgd2d575e">Step 4: Sync configuration files</h2>
+<div class="outline-text-2" id="text-orgd2d575e">
+<p>
+Now run the config script.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">&gt; ./dotfiles_util.sh
+</pre>
+</div>
+<p>
+You should not be root (but don't worry, the script will end if you are). This script, somewhat redundantly if the previous steps have been followed, checks for the repos/dotfiles directory and clones it if it cannot be found. It then symlinks four directories to <code>$HOME</code>:
+</p>
+<ul class="org-ul">
+<li><code>~/.emacs.d</code></li>
+<li><code>~/.urxvt</code></li>
+<li><code>~/bin</code></li>
+<li><code>~/.guayadeque</code></li>
+</ul>
+<p>
+It then <i>copies</i> four files to <code>$HOME</code>:
+</p>
+<ul class="org-ul">
+<li>~/.bashrc</li>
+<li>~/.bash<sub>aliases</sub></li>
+<li>~/.tmux.conf</li>
+<li>~/.Xresources</li>
+</ul>
+<p>
+For the penultimate step, the repository's copy of the <code>.config</code> directory is merged with the one present at <code>$HOME</code>. This will change the gtk theme and many other settings; <b>a restart will be required for these to come into effect.</b>
+</p>
+
+<p>
+Finally, the script will copy three backgrounds from Dropbox to various locations. The background in <code>/usr/share/...</code> is for the login screen, and the other two are wallpapers to be set depending on my mood or machine.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">&gt; ~/.config/backgrounds/{desktop_wall.jpg,laptop_wall.png}
+&gt; /usr/share/backgrounds/ubuntu-mate-common/login.png
+</pre>
+</div>
+
+<p>
+The setup is now complete.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org962b836" class="outline-2">
+<h2 id="org962b836">Extra: Old Notes</h2>
+<div class="outline-text-2" id="text-org962b836">
+</div>
+<div id="outline-container-org20f715c" class="outline-3">
+<h3 id="org20f715c">Nvidia screen tearing fix</h3>
+<div class="outline-text-3" id="text-org20f715c">
+<ul class="org-ul">
+<li>I had to enable line-out audio on my desktop. This may not be an issue elsewhere.</li>
+<li><p>
+Screen tearing with NVIDIA graphics card:
+</p>
+<ul class="org-ul">
+<li>Open Nvidia X Server Settings &gt; X Server Display Configuration &gt; Advanced &gt;</li>
+</ul>
+<p>
+Force Full Composition Pipeline &gt; Save to X Configuration File &gt;
+    '/etc/X11/xorg.conf'; or
+</p></li>
+<li>nvidia-settings &#x2013;assign CurrentMetaMode="nvidia-auto-select
++0+0 { ForceFullCompositionPipeline = On }"</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4af2eca" class="outline-3">
+<h3 id="org4af2eca">Vim-Live-Latex-Preview</h3>
+<div class="outline-text-3" id="text-org4af2eca">
+<p>
+This gave me a live updating LaTeX environment in vim. It worked well, but I've switched to working in chunks and away from vim. If this is your work style, give it a shot:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">&gt; sudo apt install texlive-full mupdf xdotool
+<span style="color: #e9afff;"># </span><span style="color: #e9afff;">if Vim8, default package manager is fine</span>
+&gt; cd .vim/pack/rac/start/
+&gt; git clone https://github.com/ying17zi/vim-live-latex-preview.git
+&gt; add ~/.vim/pack/rac/start/vim-live-latex-preview/bin to $<span style="color: #93deff;">PATH</span>
+<span style="color: #e9afff;"># </span><span style="color: #e9afff;">vim copy register</span>
+&gt; sudo apt install vim-gtk3
+</pre>
+</div>
+<ul class="org-ul">
+<li>If gvim is present (graphical vim) then a new register is unlocked. Copy to this special</li>
+</ul>
+<p>
+register with  "+yy. After that, it should be on your main clipboard.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcbed8e5" class="outline-3">
+<h3 id="orgcbed8e5">Python / Miniconda</h3>
+<div class="outline-text-3" id="text-orgcbed8e5">
+<div class="org-src-container">
+<pre class="src src-sh">&gt; mkdir ~/data/apps
+&gt; cd ~/data/apps
+&gt; wget <span style="color: #6fd3aa;">"https://repo.continuum.io/miniconda/</span>
+<span style="color: #6fd3aa;">       Miniconda3-latest-Linux-x86_64.sh"</span>
+&gt; bash Miniconda3-latest-Linux-x86_64.sh
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>install in ~/data/apps/miniconda</li>
+</ul>
+<p>
+Install minimal miniconda in base env, then make new environments for projects as necessary.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">&gt; conda update -y conda
+&gt; conda update -y --all
+&gt; conda list
+</pre>
+</div>
+
+<p>
+Now make new environments with ipykernel, including a base jupyter environment.
+The jupyter environment MUST include nb<sub>conda</sub>, and all others NEED ipykernel.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">&gt; wget <span style="color: #6fd3aa;">"https://anaconda.org/mforbes/jupyter/</span>
+<span style="color: #6fd3aa;">       2019.03.31.153852/download/environment.jupyter.yml"</span>
+&gt; conda env create --file environment.jupyter.yml
+&gt; conda create -n py3
+&gt; conda activate py3
+&gt; conda install ipykernel numpy matplotlib scipy
+&gt; conda deactivate
+</pre>
+</div>
+<p>
+This should now give you a jupyter server environment with py3 as a kernel option.
+At the end of any massive install session:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">&gt; conda update -y conda
+&gt; update -y --all
+&gt; clean -p --dry-run
+&gt; clean -p -y
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6ef6501" class="outline-2">
+<h2 id="org6ef6501">Extra: dpkg results</h2>
+<div class="outline-text-2" id="text-org6ef6501">
+<p>
+In an ipython session:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8dbeff;">from</span> IPython.display <span style="color: #8dbeff;">import</span> HTML
+<span style="color: #8dbeff;">def</span> <span style="color: #ec71ff;">show</span>(res):
+    <span style="color: #8dbeff;">return</span> HTML(<span style="color: #6fd3aa;">'&lt;pre style="font-size: 6pt;line-height: normal;"&gt;{</span>
+<span style="color: #6fd3aa;">        }&lt;/pre&gt;'</span>.<span style="color: #c767ff;">format</span>(<span style="color: #6fd3aa;">"\n"</span>.join(res)))
+<span style="color: #93deff;">res</span> = !dpkg -l | grep ii
+show(res)
+</pre>
+</div>
+
+<p>
+See one of the dated links below for a comprehensive list of packages.
+</p>
+
+<ul class="org-ul">
+<li><a href="dpkg-output.html">2020-12-04 Fri</a></li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>
