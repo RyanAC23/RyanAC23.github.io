@@ -1,8 +1,5 @@
 # RyanAC23.github.io
 
+[[RyanAC23.github.io][RyanAC23.github.io]]
+
 Archival site rescued from geocities.
-* TO DO:
-- NEW logo next to most recent posts (criteria for 'most recent' tbd)
-- Make new page, update history. Find a way to itemize entries and come up with a script that auto displays the five most recent of these on the front page.
-- Put dotfiles in new repo and link to it. Site should contain my full setup instructions for installing ubuntu-mate from scratch, as well as a separate section explainin my jupyter notebook workflow.
-- A script auto updating packages in apt / conda, and then running autoremove / clean -p, would be neat. This belongs in my dotfiles, not here.
